@@ -37,6 +37,19 @@ namespace window3
             }
             response.Close();user def = new user();
             return def;
-        }//бла//
-    } 
+        }
+        
+        
+        
+        
+        
+        // Set the Method property of the request to POST.
+        
+
+            // Create POST data and convert it to a byte array.
+            
+
+        // Set the ContentType property of the WebRequest.
+        
+    }
 }
