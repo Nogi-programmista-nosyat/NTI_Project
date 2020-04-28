@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textLogin = new System.Windows.Forms.TextBox();
+            this.logText = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textPass = new System.Windows.Forms.TextBox();
+            this.passText = new System.Windows.Forms.TextBox();
             this.buttonEnter = new System.Windows.Forms.Button();
+            this.buttonReg = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textLogin
+            // logText
             // 
-            this.textLogin.Location = new System.Drawing.Point(186, 197);
-            this.textLogin.Multiline = true;
-            this.textLogin.Name = "textLogin";
-            this.textLogin.Size = new System.Drawing.Size(200, 29);
-            this.textLogin.TabIndex = 0;
-            
+            this.logText.Location = new System.Drawing.Point(186, 197);
+            this.logText.Multiline = true;
+            this.logText.Name = "logText";
+            this.logText.Size = new System.Drawing.Size(200, 29);
+            this.logText.TabIndex = 0;
             // 
             // label1
             // 
@@ -66,39 +66,51 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Пароль";
             // 
-            // textPass
+            // passText
             // 
-            this.textPass.Location = new System.Drawing.Point(186, 260);
-            this.textPass.Multiline = true;
-            this.textPass.Name = "textPass";
-            this.textPass.Size = new System.Drawing.Size(200, 29);
-            this.textPass.TabIndex = 2;
-            this.textPass.UseSystemPasswordChar = true;
+            this.passText.Location = new System.Drawing.Point(186, 260);
+            this.passText.Name = "passText";
+            this.passText.Size = new System.Drawing.Size(200, 22);
+            this.passText.TabIndex = 2;
+            this.passText.UseSystemPasswordChar = true;
             // 
             // buttonEnter
             // 
             this.buttonEnter.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.buttonEnter.Location = new System.Drawing.Point(186, 353);
+            this.buttonEnter.Location = new System.Drawing.Point(271, 334);
             this.buttonEnter.Name = "buttonEnter";
             this.buttonEnter.Size = new System.Drawing.Size(75, 23);
             this.buttonEnter.TabIndex = 4;
             this.buttonEnter.Text = "Войти";
             this.buttonEnter.UseVisualStyleBackColor = true;
+            this.buttonEnter.Click += new System.EventHandler(this.buttonEnter_Click);
+            // 
+            // buttonReg
+            // 
+            this.buttonReg.Location = new System.Drawing.Point(121, 334);
+            this.buttonReg.Name = "buttonReg";
+            this.buttonReg.Size = new System.Drawing.Size(111, 23);
+            this.buttonReg.TabIndex = 5;
+            this.buttonReg.Text = "Регистрация";
+            this.buttonReg.UseVisualStyleBackColor = true;
+            this.buttonReg.Click += new System.EventHandler(this.buttonReg_Click);
             // 
             // loginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(26)))), ((int)(((byte)(102)))));
-            this.ClientSize = new System.Drawing.Size(476, 431);
+            this.ClientSize = new System.Drawing.Size(482, 453);
+            this.Controls.Add(this.buttonReg);
             this.Controls.Add(this.buttonEnter);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textPass);
+            this.Controls.Add(this.passText);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textLogin);
+            this.Controls.Add(this.logText);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "loginForm";
             this.Text = "loginForm";
-            this.Load += new System.EventHandler(this.loginForm_Load);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.loginForm_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -106,10 +118,11 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textLogin;
+        private System.Windows.Forms.TextBox logText;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textPass;
+        private System.Windows.Forms.TextBox passText;
         private System.Windows.Forms.Button buttonEnter;
+        private System.Windows.Forms.Button buttonReg;
     }
 }

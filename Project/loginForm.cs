@@ -15,13 +15,31 @@ namespace window3
         public loginForm()
         {
             InitializeComponent();
+
+            this.passText.AutoSize = false;
+            this.passText.Size = new Size(this.passText.Size.Width, logText.Size.Height);
         }
 
-        private void loginForm_Load(object sender, EventArgs e)
+        public void loginForm_FormClosed(object sender, EventArgs e)
         {
+            this.Hide();
+            mainForm main = new mainForm(); 
+            main.Show();
 
         }
 
- 
+        private void buttonReg_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            regForm registration = new regForm();
+            registration.Show();
+        }
+
+        private void buttonEnter_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            idForm id_log = new idForm();
+            id_log.Show();
+        }
     }
 }

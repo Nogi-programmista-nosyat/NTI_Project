@@ -34,26 +34,51 @@ namespace window3
 
         }
 
+        private void mainForm_Load(object sender, EventArgs e)
+        {
+            WebRequests client = new WebRequests();
+            user result = client.login("0","123");
+            buttonEnter.Text = result.perm_level.ToString();
+        }
+        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            Show();
+            WindowState = FormWindowState.Normal;
+
+        }
+
+        public void mainForm_FormClosed(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Normal)
+                Hide();
+
+        }
+
+
+        //восстановление из трея
+        private void notifyIcon1_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Minimized)
+            {
+                this.WindowState = FormWindowState.Normal;
+                this.ShowInTaskbar = true;
+                notifyIcon1.Visible = false;
+            }
+        }
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
-            teleForm tele = new teleForm();
-            tele.Show();
+            regForm reg = new regForm();
+            reg.Show();
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            loginForm login = new loginForm();
+            loginForm login = new loginForm();           //new loginForm().Showlogin();
             login.Show();
-        }
 
-        private void mainForm_Load(object sender, EventArgs e)
-        {
-            WebRequests client = new WebRequests();
-            user result = client.login("0","123");
-            buttonEnter.Text = result.perm_level.ToString();
         }
     }
 }

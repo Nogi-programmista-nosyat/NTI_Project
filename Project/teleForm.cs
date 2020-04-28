@@ -17,8 +17,11 @@ namespace window3
             InitializeComponent();
         }
 
-        private void TeleForm_Load(object sender, EventArgs e)
+        public void teleForm_FormClosed(object sender, EventArgs e)
         {
+            this.Hide();
+            mainForm main = new mainForm();
+            main.Show();
 
         }
     }

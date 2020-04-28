@@ -24,3 +24,5 @@ C:\Users\user\source\repos\NTI_Project\Project\bin\Debug\window3.pdb
 C:\Users\user\source\repos\NTI_Project\Project\bin\Debug\Newtonsoft.Json.dll
 C:\Users\user\source\repos\NTI_Project\Project\bin\Debug\Newtonsoft.Json.xml
 C:\Users\user\source\repos\NTI_Project\Project\obj\Debug\window3.csproj.CopyComplete
+C:\Users\user\source\repos\NTI_Project\Project\obj\Debug\window3.idForm.resources
+C:\Users\user\source\repos\NTI_Project\Project\obj\Debug\window3.regForm.resources
