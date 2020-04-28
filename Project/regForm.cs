@@ -23,8 +23,7 @@ namespace window3
         public void regForm_FormClosed(object sender, EventArgs e)
         {
             this.Hide();
-            mainForm main = new mainForm();
-            main.Show();
+            
 
         }
 

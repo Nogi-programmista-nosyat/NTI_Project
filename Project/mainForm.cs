@@ -15,14 +15,24 @@ namespace window3
 
     public partial class mainForm : Form
     {
-        bool flag;
+        bool flag = false;
+        regForm reg = new regForm();
+        loginForm login = new loginForm();
+
 
         public mainForm()
         {
             InitializeComponent();
         }
 
-        
+
+        public void loginForm_FormClosed(object sender, EventArgs e)
+        {
+            this.Close();
+            mainForm main = new mainForm();
+            DialogResult result = main.ShowDialog();
+
+        }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -60,40 +70,46 @@ namespace window3
             this.ShowInTaskbar = false;
             e.Cancel = true;
             if (flag == true)
+            {
+                
+                reg.Close();
+                login.Close();
                 e.Cancel = false;
+                flag = false;
+            }
+
+            
         }
         
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
-            regForm reg = new regForm();
-            reg.Show();
+            reg.ShowDialog();
+            this.Show();
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            loginForm login = new loginForm();           //new loginForm().Showlogin();
-            login.Show();
+            login.ShowDialog();           //new loginForm().Showlogin();
+            this.Show();
 
         }
 
         
 
-        public void mainForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Application.Exit();
-        }
+        
 
 
         
 
-        private void exitButton_Click(object sender, FormClosedEventArgs e)
+        
+
+        private void exitButton_Click(object sender, EventArgs e)
         {
             flag = true;
             this.Close();
-
         }
 
         //private void mainForm_Deactivate_1(object sender, EventArgs e)

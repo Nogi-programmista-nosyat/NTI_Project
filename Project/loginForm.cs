@@ -23,9 +23,7 @@ namespace window3
         public void loginForm_FormClosed(object sender, EventArgs e)
         {
             this.Hide();
-            mainForm main = new mainForm(); 
-            main.Show();
-
+            
         }
 
         private void buttonReg_Click(object sender, EventArgs e)

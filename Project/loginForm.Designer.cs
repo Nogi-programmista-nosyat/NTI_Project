@@ -33,7 +33,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.passText = new System.Windows.Forms.TextBox();
             this.buttonEnter = new System.Windows.Forms.Button();
-            this.buttonReg = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // logText
@@ -77,7 +76,7 @@
             // buttonEnter
             // 
             this.buttonEnter.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.buttonEnter.Location = new System.Drawing.Point(271, 334);
+            this.buttonEnter.Location = new System.Drawing.Point(186, 340);
             this.buttonEnter.Name = "buttonEnter";
             this.buttonEnter.Size = new System.Drawing.Size(75, 23);
             this.buttonEnter.TabIndex = 4;
@@ -85,23 +84,12 @@
             this.buttonEnter.UseVisualStyleBackColor = true;
             this.buttonEnter.Click += new System.EventHandler(this.buttonEnter_Click);
             // 
-            // buttonReg
-            // 
-            this.buttonReg.Location = new System.Drawing.Point(121, 334);
-            this.buttonReg.Name = "buttonReg";
-            this.buttonReg.Size = new System.Drawing.Size(111, 23);
-            this.buttonReg.TabIndex = 5;
-            this.buttonReg.Text = "Регистрация";
-            this.buttonReg.UseVisualStyleBackColor = true;
-            this.buttonReg.Click += new System.EventHandler(this.buttonReg_Click);
-            // 
             // loginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(26)))), ((int)(((byte)(102)))));
             this.ClientSize = new System.Drawing.Size(482, 453);
-            this.Controls.Add(this.buttonReg);
             this.Controls.Add(this.buttonEnter);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.passText);
@@ -123,6 +111,5 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox passText;
         private System.Windows.Forms.Button buttonEnter;
-        private System.Windows.Forms.Button buttonReg;
     }
 }
