@@ -16,5 +16,10 @@ namespace window3
         {
             InitializeComponent();
         }
+
+        private void TeleForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace window3
 {
-    partial class TeleForm
+    partial class teleForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,12 +30,12 @@
         {
             this.SuspendLayout();
             // 
-            // TeleForm
+            // teleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(777, 548);
-            this.Name = "TeleForm";
+            this.Name = "teleForm";
             this.Text = "TeleForm";
             this.Load += new System.EventHandler(this.TeleForm_Load);
             this.ResumeLayout(false);

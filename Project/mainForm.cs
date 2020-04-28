@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -45,12 +47,13 @@ namespace window3
             this.Hide();
             loginForm login = new loginForm();
             login.Show();
-
         }
 
         private void mainForm_Load(object sender, EventArgs e)
         {
-
+            WebRequests client = new WebRequests();
+            user result = client.login("0","123");
+            buttonEnter.Text = result.perm_level.ToString();
         }
     }
 }
