@@ -1,17 +1,25 @@
 ﻿namespace window3
 {
-    partial class teleForm
+    partial class idForm
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        
+        private System.ComponentModel.IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
 
         #region Windows Form Designer generated code
 
@@ -23,15 +31,15 @@
         {
             this.SuspendLayout();
             // 
-            // teleForm
+            // idForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-            this.Name = "teleForm";
-            this.Text = "teleForm";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.teleForm_FormClosed);
+            this.ClientSize = new System.Drawing.Size(792, 542);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Name = "idForm";
+            this.Text = "Личный кабинет";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.idForm_FormClosing);
             this.ResumeLayout(false);
 
         }

@@ -83,6 +83,7 @@
             this.buttonEnter.TabIndex = 4;
             this.buttonEnter.Text = "Войти";
             this.buttonEnter.UseVisualStyleBackColor = true;
+            this.buttonEnter.Click += new System.EventHandler(this.buttonEnter_Click);
             // 
             // buttonReg
             // 
@@ -92,13 +93,14 @@
             this.buttonReg.TabIndex = 5;
             this.buttonReg.Text = "Регистрация";
             this.buttonReg.UseVisualStyleBackColor = true;
+            this.buttonReg.Click += new System.EventHandler(this.buttonReg_Click);
             // 
             // loginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(26)))), ((int)(((byte)(102)))));
-            this.ClientSize = new System.Drawing.Size(476, 431);
+            this.ClientSize = new System.Drawing.Size(482, 453);
             this.Controls.Add(this.buttonReg);
             this.Controls.Add(this.buttonEnter);
             this.Controls.Add(this.label2);

@@ -28,6 +28,18 @@ namespace window3
 
         }
 
+        private void buttonReg_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            regForm registration = new regForm();
+            registration.Show();
+        }
 
+        private void buttonEnter_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            idForm id_log = new idForm();
+            id_log.Show();
+        }
     }
 }

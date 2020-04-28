@@ -35,8 +35,8 @@ namespace window3
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
-            teleForm tele = new teleForm();
-            tele.Show();
+            regForm reg = new regForm();
+            reg.Show();
             
         }
 
@@ -48,12 +48,34 @@ namespace window3
 
         }
 
-        public void mainForm_FormClosed(object sender, EventArgs e)
+      
+
+        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            Application.Exit();
+            Show();
+            WindowState = FormWindowState.Normal;
 
         }
 
+        public void mainForm_FormClosed(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Normal)
+                Hide();
 
+        }
+
+        
+        //восстановление из трея
+        private void notifyIcon1_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Minimized)
+            {
+                this.WindowState = FormWindowState.Normal;
+                this.ShowInTaskbar = true;
+                notifyIcon1.Visible = false;
+            }
+        }
+
+        
     }
 }

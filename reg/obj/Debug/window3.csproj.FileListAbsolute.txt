@@ -9,3 +9,16 @@ D:\Visual Studio\window3\obj\Debug\window3.exe
 D:\Visual Studio\window3\obj\Debug\window3.pdb
 D:\Visual Studio\window3\obj\Debug\window3.loginForm.resources
 D:\Visual Studio\window3\obj\Debug\window3.teleForm.resources
+D:\Education\НТИ\NTI_Project\reg\bin\Debug\window3.exe.config
+D:\Education\НТИ\NTI_Project\reg\bin\Debug\window3.exe
+D:\Education\НТИ\NTI_Project\reg\bin\Debug\window3.pdb
+D:\Education\НТИ\NTI_Project\reg\obj\Debug\window3.csprojAssemblyReference.cache
+D:\Education\НТИ\NTI_Project\reg\obj\Debug\window3.loginForm.resources
+D:\Education\НТИ\NTI_Project\reg\obj\Debug\window3.mainForm.resources
+D:\Education\НТИ\NTI_Project\reg\obj\Debug\window3.Properties.Resources.resources
+D:\Education\НТИ\NTI_Project\reg\obj\Debug\window3.regForm.resources
+D:\Education\НТИ\NTI_Project\reg\obj\Debug\window3.teleForm.resources
+D:\Education\НТИ\NTI_Project\reg\obj\Debug\window3.csproj.GenerateResource.cache
+D:\Education\НТИ\NTI_Project\reg\obj\Debug\window3.exe
+D:\Education\НТИ\NTI_Project\reg\obj\Debug\window3.pdb
+D:\Education\НТИ\NTI_Project\reg\obj\Debug\window3.idForm.resources
