@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace window3
 {
-    struct user
+    public struct user
     {
         public int id;
         public string name;

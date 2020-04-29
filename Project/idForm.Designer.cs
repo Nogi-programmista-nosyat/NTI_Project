@@ -20,7 +20,6 @@
             base.Dispose(disposing);
         }
 
-
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -35,11 +34,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(792, 542);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.ClientSize = new System.Drawing.Size(608, 546);
             this.Name = "idForm";
-            this.Text = "Личный кабинет";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.idForm_FormClosing);
+            this.Text = "idForm";
+            this.Load += new System.EventHandler(this.IdForm_Load);
             this.ResumeLayout(false);
 
         }

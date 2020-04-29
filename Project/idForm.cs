@@ -12,29 +12,16 @@ namespace window3
 {
     public partial class idForm : Form
     {
+        public user curuser;
+
         public idForm()
         {
             InitializeComponent();
         }
 
-        
-
-        private void idForm_FormClosing(object sender, FormClosingEventArgs e)
+        private void IdForm_Load(object sender, EventArgs e)
         {
-            DialogResult dialog = MessageBox.Show(
-             "Вы действительно хотите выйти из программы?",
-             "Завершение программы",
-             MessageBoxButtons.YesNo,
-             MessageBoxIcon.Warning
-            );
-            if (dialog == DialogResult.Yes)
-            {
-                e.Cancel = false;
-            }
-            else
-            {
-                e.Cancel = true;
-            }
+
         }
     }
 }
