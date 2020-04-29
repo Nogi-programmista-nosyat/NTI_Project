@@ -13,10 +13,6 @@ namespace window3
     public partial class regForm : Form
     {
         public user curuser;
-        String Name="";
-        String Login = "";
-        String Age = "";
-        String Exp = "";
         public regForm()
         {
             InitializeComponent();
@@ -72,6 +68,22 @@ namespace window3
         private void expText_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!(Char.IsDigit(e.KeyChar)) && (e.KeyChar != (char)Keys.Back) && (e.KeyChar != (char)Keys.Delete))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void nameText_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(Char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back) && (e.KeyChar != (char)Keys.Delete) && !(Char.IsWhiteSpace(e.KeyChar)))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void logText_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((Char.IsWhiteSpace(e.KeyChar)) && (e.KeyChar != (char)Keys.Back) && (e.KeyChar != (char)Keys.Delete))
             {
                 e.Handled = true;
             }

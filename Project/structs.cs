@@ -30,12 +30,12 @@ namespace window3
         public float power;
         public float loading;
         public int work_time;
-        public System.DateTime data;
+        public System.DateTime dattim;
         public void getDate()
         {
             string[] datArr = date.Split('.');
             string[] timArr = date.Split(':');
-            data = new System.DateTime(Convert.ToInt32(datArr[2]), Convert.ToInt32(datArr[1]), Convert.ToInt32(datArr[0]), 
+            dattim = new System.DateTime(Convert.ToInt32(datArr[2]), Convert.ToInt32(datArr[1]), Convert.ToInt32(datArr[0]), 
                 Convert.ToInt32(timArr[0]), Convert.ToInt32(timArr[1]), Convert.ToInt32(timArr[2]));
         }
     }

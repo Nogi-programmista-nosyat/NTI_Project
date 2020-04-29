@@ -86,6 +86,7 @@
             this.nameText.Size = new System.Drawing.Size(245, 22);
             this.nameText.TabIndex = 3;
             this.nameText.TextChanged += new System.EventHandler(this.NameText_TextChanged);
+            this.nameText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nameText_KeyPress);
             // 
             // sexLabel
             // 
@@ -190,7 +191,7 @@
             this.logText.Name = "logText";
             this.logText.Size = new System.Drawing.Size(245, 22);
             this.logText.TabIndex = 16;
-            this.logText.TextChanged += new System.EventHandler(this.LogText_TextChanged);
+            this.logText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.logText_KeyPress);
             // 
             // logLabel
             // 

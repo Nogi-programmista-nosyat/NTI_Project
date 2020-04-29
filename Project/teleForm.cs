@@ -13,6 +13,7 @@ namespace window3
     public partial class teleForm : Form
     {
         public user curuser = new user();
+        List<devCommit> dataList = new List<devCommit>();
 
         public teleForm()
         {
@@ -22,8 +23,6 @@ namespace window3
         public void teleForm_FormClosed(object sender, EventArgs e)
         {
             this.Hide();
-            mainForm main = new mainForm();
-            main.Show();
 
         }
 
@@ -62,17 +61,20 @@ namespace window3
 
         private void teleForm_Load(object sender, EventArgs e)
         {
-            
-
+            WebRequests client = new WebRequests();
+            dataList = client.getDevData(curuser.login, curuser.password);
+            for (int i = 0; i < 5; i++)
+            {
+                this.typeCombo.Items.Add(dataList[i].work_time);
+            }
             id_devCombo.Items.Add(curuser.name);
             id_devCombo.Items.Add(curuser.age);
-
+            
             this.typeCombo.Items.AddRange(new object[] {
             "Диаграмма",
             "График",
             "Таблица"});
-        }
 
-        
+        }
     }
 }
