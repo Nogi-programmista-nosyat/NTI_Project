@@ -67,14 +67,45 @@ namespace window3
             {
                 this.typeCombo.Items.Add(dataList[i].work_time);
             }
-            id_devCombo.Items.Add(curuser.name);
-            id_devCombo.Items.Add(curuser.age);
-            
+
+            List<string> somedevs = new List<string>();
+
+            for (int i = 0; i<dataList.Count; i++)
+            {
+                if (!somedevs.Contains(dataList[i].dev_id.ToString()))
+                    somedevs.Add(dataList[i].dev_id.ToString());
+            }
+
+            for (int i=0; i<somedevs.Count; i++)
+            {
+                ToolStripMenuItem newItem = new ToolStripMenuItem(somedevs[i]) { Checked = true, CheckOnClick = true };
+                itemToolStripMenuItem.DropDownItems.Add(newItem);
+            }
+
+
+            ToolStripMenuItem saveItem = new ToolStripMenuItem("Сохранить") { Checked = true, CheckOnClick = true };
+            itemToolStripMenuItem.DropDownItems.Add(saveItem);
+
             this.typeCombo.Items.AddRange(new object[] {
             "Диаграмма",
             "График",
             "Таблица"});
 
+        }
+        public void visualizeAll()
+        {
+            
+            if (typeCombo.SelectedIndex==0)
+            {
+            }
+            if (typeCombo.SelectedIndex == 1)
+            {
+
+            }
+            if (typeCombo.SelectedIndex == 2)
+            {
+
+            }
         }
     }
 }

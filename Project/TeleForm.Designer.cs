@@ -29,8 +29,7 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.typeCombo = new System.Windows.Forms.ToolStripComboBox();
-            this.id_devCombo = new System.Windows.Forms.ToolStripComboBox();
-            this.parCombo = new System.Windows.Forms.ToolStripComboBox();
+            this.itemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.chartTemp = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -51,8 +50,7 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.typeCombo,
-            this.id_devCombo,
-            this.parCombo});
+            this.itemToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 32);
@@ -69,15 +67,12 @@
             this.typeCombo.Size = new System.Drawing.Size(121, 28);
             this.typeCombo.Click += new System.EventHandler(this.toolStripComboBox1_Click);
             // 
-            // id_devCombo
+            // itemToolStripMenuItem
             // 
-            this.id_devCombo.Name = "id_devCombo";
-            this.id_devCombo.Size = new System.Drawing.Size(121, 28);
-            // 
-            // parCombo
-            // 
-            this.parCombo.Name = "parCombo";
-            this.parCombo.Size = new System.Drawing.Size(121, 28);
+            this.itemToolStripMenuItem.CheckOnClick = true;
+            this.itemToolStripMenuItem.Name = "itemToolStripMenuItem";
+            this.itemToolStripMenuItem.Size = new System.Drawing.Size(53, 28);
+            this.itemToolStripMenuItem.Text = "item";
             // 
             // dateTimePicker1
             // 
@@ -162,12 +157,11 @@
         private System.ComponentModel.IContainer components;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripComboBox typeCombo;
-        private System.Windows.Forms.ToolStripComboBox id_devCombo;
-        private System.Windows.Forms.ToolStripComboBox parCombo;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartTemp;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.ToolStripMenuItem itemToolStripMenuItem;
     }
 }
