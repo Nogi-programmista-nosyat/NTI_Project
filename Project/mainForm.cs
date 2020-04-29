@@ -63,7 +63,7 @@ namespace window3
 
         public void mainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
+            this.Hide();
             this.ShowInTaskbar = false;
             e.Cancel = true;
             if (flag == true)
