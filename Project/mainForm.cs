@@ -106,7 +106,8 @@ namespace window3
 
         private void next_button1_Click(object sender, EventArgs e)
         {
-            tele.ShowDialog();
+            tele.curuser = curuser;
+            tele.ShowDialog();   
 
         }
 

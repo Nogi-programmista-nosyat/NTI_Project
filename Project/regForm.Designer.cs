@@ -122,7 +122,7 @@
             this.ageText.Name = "ageText";
             this.ageText.Size = new System.Drawing.Size(45, 22);
             this.ageText.TabIndex = 7;
-            this.ageText.TextChanged += new System.EventHandler(this.AgeText_TextChanged);
+            this.ageText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ageText_KeyPress);
             // 
             // mailLabel
             // 
@@ -155,7 +155,7 @@
             this.expText.Name = "expText";
             this.expText.Size = new System.Drawing.Size(45, 22);
             this.expText.TabIndex = 11;
-            this.expText.TextChanged += new System.EventHandler(this.ExpText_TextChanged);
+            this.expText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.expText_KeyPress);
             // 
             // regButton2
             // 
