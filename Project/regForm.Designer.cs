@@ -44,6 +44,8 @@
             this.regButton2 = new System.Windows.Forms.Button();
             this.passRegText = new System.Windows.Forms.Label();
             this.passText = new System.Windows.Forms.TextBox();
+            this.logText = new System.Windows.Forms.TextBox();
+            this.logLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // postComboBox
@@ -54,7 +56,7 @@
             "Руководитель отдела",
             "Руководитель предприятия",
             "Администратор"});
-            this.postComboBox.Location = new System.Drawing.Point(201, 111);
+            this.postComboBox.Location = new System.Drawing.Point(201, 75);
             this.postComboBox.Name = "postComboBox";
             this.postComboBox.Size = new System.Drawing.Size(205, 24);
             this.postComboBox.TabIndex = 0;
@@ -62,7 +64,7 @@
             // postLabel
             // 
             this.postLabel.AutoSize = true;
-            this.postLabel.Location = new System.Drawing.Point(114, 114);
+            this.postLabel.Location = new System.Drawing.Point(114, 78);
             this.postLabel.Name = "postLabel";
             this.postLabel.Size = new System.Drawing.Size(81, 17);
             this.postLabel.TabIndex = 1;
@@ -83,6 +85,7 @@
             this.nameText.Name = "nameText";
             this.nameText.Size = new System.Drawing.Size(245, 22);
             this.nameText.TabIndex = 3;
+            this.nameText.TextChanged += new System.EventHandler(this.NameText_TextChanged);
             // 
             // sexLabel
             // 
@@ -97,8 +100,8 @@
             // 
             this.sexComboBox.FormattingEnabled = true;
             this.sexComboBox.Items.AddRange(new object[] {
-            "Женский ",
-            "Мужской"});
+            "Мужской",
+            "Женский"});
             this.sexComboBox.Location = new System.Drawing.Point(201, 217);
             this.sexComboBox.Name = "sexComboBox";
             this.sexComboBox.Size = new System.Drawing.Size(121, 24);
@@ -119,6 +122,7 @@
             this.ageText.Name = "ageText";
             this.ageText.Size = new System.Drawing.Size(45, 22);
             this.ageText.TabIndex = 7;
+            this.ageText.TextChanged += new System.EventHandler(this.AgeText_TextChanged);
             // 
             // mailLabel
             // 
@@ -151,6 +155,7 @@
             this.expText.Name = "expText";
             this.expText.Size = new System.Drawing.Size(45, 22);
             this.expText.TabIndex = 11;
+            this.expText.TextChanged += new System.EventHandler(this.ExpText_TextChanged);
             // 
             // regButton2
             // 
@@ -179,12 +184,31 @@
             this.passText.TabIndex = 14;
             this.passText.UseSystemPasswordChar = true;
             // 
+            // logText
+            // 
+            this.logText.Location = new System.Drawing.Point(201, 122);
+            this.logText.Name = "logText";
+            this.logText.Size = new System.Drawing.Size(245, 22);
+            this.logText.TabIndex = 16;
+            this.logText.TextChanged += new System.EventHandler(this.LogText_TextChanged);
+            // 
+            // logLabel
+            // 
+            this.logLabel.AutoSize = true;
+            this.logLabel.Location = new System.Drawing.Point(114, 125);
+            this.logLabel.Name = "logLabel";
+            this.logLabel.Size = new System.Drawing.Size(47, 17);
+            this.logLabel.TabIndex = 15;
+            this.logLabel.Text = "Логин";
+            // 
             // regForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(537, 584);
+            this.Controls.Add(this.logText);
+            this.Controls.Add(this.logLabel);
             this.Controls.Add(this.passText);
             this.Controls.Add(this.passRegText);
             this.Controls.Add(this.regButton2);
@@ -226,5 +250,7 @@
         private System.Windows.Forms.Button regButton2;
         private System.Windows.Forms.Label passRegText;
         private System.Windows.Forms.TextBox passText;
+        private System.Windows.Forms.TextBox logText;
+        private System.Windows.Forms.Label logLabel;
     }
 }

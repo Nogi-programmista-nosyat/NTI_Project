@@ -125,7 +125,6 @@ namespace window3
         {
             idform.curuser = curuser;
             idform.ShowDialog();
-            
         }
     }
 }

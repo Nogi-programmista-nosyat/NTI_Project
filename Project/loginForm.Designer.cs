@@ -38,6 +38,7 @@
             // 
             // logText
             // 
+            this.logText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.logText.Location = new System.Drawing.Point(186, 197);
             this.logText.Multiline = true;
             this.logText.Name = "logText";
@@ -68,9 +69,10 @@
             // 
             // passText
             // 
-            this.passText.Location = new System.Drawing.Point(186, 260);
+            this.passText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.passText.Location = new System.Drawing.Point(186, 256);
             this.passText.Name = "passText";
-            this.passText.Size = new System.Drawing.Size(200, 22);
+            this.passText.Size = new System.Drawing.Size(200, 30);
             this.passText.TabIndex = 2;
             this.passText.UseSystemPasswordChar = true;
             // 

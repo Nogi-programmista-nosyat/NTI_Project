@@ -20,4 +20,23 @@ namespace window3
         public int perm_level;
         public void nul() { id = 0; name = ""; sex = 0; position = ""; experience = 0; password = ""; login = ""; perm_level = 0; }
     };
+    public struct devCommit
+    {
+        public int id;
+        public int dev_id;
+        public string date;
+        public string time;
+        public float vibr;
+        public float power;
+        public float loading;
+        public int work_time;
+        public System.DateTime data;
+        public void getDate()
+        {
+            string[] datArr = date.Split('.');
+            string[] timArr = date.Split(':');
+            data = new System.DateTime(Convert.ToInt32(datArr[2]), Convert.ToInt32(datArr[1]), Convert.ToInt32(datArr[0]), 
+                Convert.ToInt32(timArr[0]), Convert.ToInt32(timArr[1]), Convert.ToInt32(timArr[2]));
+        }
+    }
 }
