@@ -22,40 +22,43 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            this.id = new System.Windows.Forms.MenuStrip();
             this.typeCombo = new System.Windows.Forms.ToolStripComboBox();
-            this.itemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.id_dev = new System.Windows.Forms.ToolStripMenuItem();
+            this.par = new System.Windows.Forms.ToolStripMenuItem();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.chartTemp = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.button1 = new System.Windows.Forms.Button();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
-            this.menuStrip1.SuspendLayout();
+            this.id_devMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.fdToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.времяРаботыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.уроеньПотребленияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.уровеньНагрузкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.температураToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.уровеньВибрацииToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.id.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartTemp)).BeginInit();
+            this.id_devMenu.SuspendLayout();
             this.SuspendLayout();
             // 
-            // contextMenuStrip1
+            // id
             // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.id.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.id.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.typeCombo,
-            this.itemToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 32);
-            this.menuStrip1.TabIndex = 3;
-            this.menuStrip1.Text = "menuStrip1";
+            this.id_dev,
+            this.par});
+            this.id.Location = new System.Drawing.Point(0, 0);
+            this.id.Name = "id";
+            this.id.Size = new System.Drawing.Size(800, 32);
+            this.id.TabIndex = 3;
+            this.id.Text = "menuStrip1";
             // 
             // typeCombo
             // 
@@ -67,12 +70,23 @@
             this.typeCombo.Size = new System.Drawing.Size(121, 28);
             this.typeCombo.Click += new System.EventHandler(this.toolStripComboBox1_Click);
             // 
-            // itemToolStripMenuItem
+            // id_dev
             // 
-            this.itemToolStripMenuItem.CheckOnClick = true;
-            this.itemToolStripMenuItem.Name = "itemToolStripMenuItem";
-            this.itemToolStripMenuItem.Size = new System.Drawing.Size(53, 28);
-            this.itemToolStripMenuItem.Text = "item";
+            this.id_dev.Name = "id_dev";
+            this.id_dev.Size = new System.Drawing.Size(127, 28);
+            this.id_dev.Text = "Оборудование";
+            // 
+            // par
+            // 
+            this.par.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.времяРаботыToolStripMenuItem,
+            this.уроеньПотребленияToolStripMenuItem,
+            this.уровеньНагрузкиToolStripMenuItem,
+            this.температураToolStripMenuItem,
+            this.уровеньВибрацииToolStripMenuItem});
+            this.par.Name = "par";
+            this.par.Size = new System.Drawing.Size(93, 28);
+            this.par.Text = "Параметр";
             // 
             // dateTimePicker1
             // 
@@ -90,23 +104,23 @@
             // 
             // chartTemp
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chartTemp.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartTemp.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.chartTemp.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartTemp.Legends.Add(legend2);
             this.chartTemp.Location = new System.Drawing.Point(39, 56);
             this.chartTemp.Name = "chartTemp";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series1.Legend = "Legend1";
-            series1.Name = "Температура";
-            this.chartTemp.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series2.Legend = "Legend1";
+            series2.Name = "Температура";
+            this.chartTemp.Series.Add(series2);
             this.chartTemp.Size = new System.Drawing.Size(665, 314);
             this.chartTemp.TabIndex = 6;
             this.chartTemp.Text = "chart1";
-            title1.Name = "Title1";
-            title1.Text = "Наверно машина";
-            this.chartTemp.Titles.Add(title1);
+            title2.Name = "Title1";
+            title2.Text = "Наверно машина";
+            this.chartTemp.Titles.Add(title2);
             // 
             // button1
             // 
@@ -118,50 +132,113 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // checkedListBox1
+            // id_devMenu
             // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(366, 349);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(120, 89);
-            this.checkedListBox1.TabIndex = 8;
+            this.id_devMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.id_devMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fdToolStripMenuItem,
+            this.toolStripMenuItem1});
+            this.id_devMenu.Name = "id_devMenu";
+            this.id_devMenu.Size = new System.Drawing.Size(93, 52);
+            // 
+            // fdToolStripMenuItem
+            // 
+            this.fdToolStripMenuItem.Name = "fdToolStripMenuItem";
+            this.fdToolStripMenuItem.Size = new System.Drawing.Size(92, 24);
+            this.fdToolStripMenuItem.Text = "fd";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(92, 24);
+            // 
+            // времяРаботыToolStripMenuItem
+            // 
+            this.времяРаботыToolStripMenuItem.Checked = true;
+            this.времяРаботыToolStripMenuItem.CheckOnClick = true;
+            this.времяРаботыToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.времяРаботыToolStripMenuItem.Name = "времяРаботыToolStripMenuItem";
+            this.времяРаботыToolStripMenuItem.Size = new System.Drawing.Size(240, 26);
+            this.времяРаботыToolStripMenuItem.Text = "Время работы";
+            // 
+            // уроеньПотребленияToolStripMenuItem
+            // 
+            this.уроеньПотребленияToolStripMenuItem.Checked = true;
+            this.уроеньПотребленияToolStripMenuItem.CheckOnClick = true;
+            this.уроеньПотребленияToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.уроеньПотребленияToolStripMenuItem.Name = "уроеньПотребленияToolStripMenuItem";
+            this.уроеньПотребленияToolStripMenuItem.Size = new System.Drawing.Size(240, 26);
+            this.уроеньПотребленияToolStripMenuItem.Text = "Уроень потребления";
+            // 
+            // уровеньНагрузкиToolStripMenuItem
+            // 
+            this.уровеньНагрузкиToolStripMenuItem.Checked = true;
+            this.уровеньНагрузкиToolStripMenuItem.CheckOnClick = true;
+            this.уровеньНагрузкиToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.уровеньНагрузкиToolStripMenuItem.Name = "уровеньНагрузкиToolStripMenuItem";
+            this.уровеньНагрузкиToolStripMenuItem.Size = new System.Drawing.Size(240, 26);
+            this.уровеньНагрузкиToolStripMenuItem.Text = "Уровень нагрузки";
+            // 
+            // температураToolStripMenuItem
+            // 
+            this.температураToolStripMenuItem.Checked = true;
+            this.температураToolStripMenuItem.CheckOnClick = true;
+            this.температураToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.температураToolStripMenuItem.Name = "температураToolStripMenuItem";
+            this.температураToolStripMenuItem.Size = new System.Drawing.Size(240, 26);
+            this.температураToolStripMenuItem.Text = "Температура";
+            // 
+            // уровеньВибрацииToolStripMenuItem
+            // 
+            this.уровеньВибрацииToolStripMenuItem.Checked = true;
+            this.уровеньВибрацииToolStripMenuItem.CheckOnClick = true;
+            this.уровеньВибрацииToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.уровеньВибрацииToolStripMenuItem.Name = "уровеньВибрацииToolStripMenuItem";
+            this.уровеньВибрацииToolStripMenuItem.Size = new System.Drawing.Size(240, 26);
+            this.уровеньВибрацииToolStripMenuItem.Text = "Уровень вибрации";
             // 
             // teleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.chartTemp);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.id);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-            this.MainMenuStrip = this.menuStrip1;
+            this.MainMenuStrip = this.id;
             this.Name = "teleForm";
             this.Text = "teleForm";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.teleForm_FormClosed);
             this.Load += new System.EventHandler(this.teleForm_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.id.ResumeLayout(false);
+            this.id.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartTemp)).EndInit();
+            this.id_devMenu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.ComponentModel.IContainer components;
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip id;
         private System.Windows.Forms.ToolStripComboBox typeCombo;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartTemp;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
-        private System.Windows.Forms.ToolStripMenuItem itemToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip id_devMenu;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem fdToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem id_dev;
+        private System.Windows.Forms.ToolStripMenuItem par;
+        private System.Windows.Forms.ToolStripMenuItem времяРаботыToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem уроеньПотребленияToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem уровеньНагрузкиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem температураToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem уровеньВибрацииToolStripMenuItem;
     }
 }

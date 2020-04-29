@@ -18,7 +18,12 @@ namespace window3
         public teleForm()
         {
             InitializeComponent();
+
+            
+
         }
+
+
 
         public void teleForm_FormClosed(object sender, EventArgs e)
         {
@@ -63,9 +68,20 @@ namespace window3
         {
             WebRequests client = new WebRequests();
             dataList = client.getDevData(curuser.login, curuser.password);
-            for (int i = 0; i < 5; i++)
+
+            List<string> somedevs = new List<string>();
+
+            for (int i = 0; i < dataList.Count; i++)
             {
-                this.typeCombo.Items.Add(dataList[i].work_time);
+                if (!somedevs.Contains(dataList[i].dev_id.ToString()))
+                    somedevs.Add(dataList[i].dev_id.ToString());
+                
+            }
+
+            for (int i = 0; i < somedevs.Count; i++)
+            {
+                ToolStripMenuItem newItem = new ToolStripMenuItem(somedevs[i]) { Checked = true, CheckOnClick = true };
+                id_dev.DropDownItems.Add(newItem);
             }
 
             List<string> somedevs = new List<string>();
