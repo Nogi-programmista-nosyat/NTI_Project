@@ -34,11 +34,9 @@
             this.buttonEnter = new System.Windows.Forms.Button();
             this.buttonReg1 = new System.Windows.Forms.Button();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.exitButton = new System.Windows.Forms.Button();
-            this.teleButton1 = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button1 = new System.Windows.Forms.Button();
+            this.idButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -95,25 +93,6 @@
             this.notifyIcon1.Visible = true;
             this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
             // 
-            // exitButton
-            // 
-            this.exitButton.Location = new System.Drawing.Point(53, 464);
-            this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(89, 25);
-            this.exitButton.TabIndex = 3;
-            this.exitButton.Text = "Выход";
-            this.exitButton.UseVisualStyleBackColor = true;
-            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
-            // 
-            // teleButton1
-            // 
-            this.teleButton1.Location = new System.Drawing.Point(289, 458);
-            this.teleButton1.Name = "teleButton1";
-            this.teleButton1.Size = new System.Drawing.Size(116, 31);
-            this.teleButton1.TabIndex = 4;
-            this.teleButton1.Text = "Телеметрия";
-            this.teleButton1.UseVisualStyleBackColor = true;
-            // 
             // menuStrip1
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -133,15 +112,15 @@
             this.выходToolStripMenuItem.Text = "Выход";
             this.выходToolStripMenuItem.Click += new System.EventHandler(this.ВыходToolStripMenuItem_Click);
             // 
-            // button1
+            // idButton
             // 
-            this.button1.Location = new System.Drawing.Point(336, 118);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click_1);
+            this.idButton.Location = new System.Drawing.Point(353, 64);
+            this.idButton.Name = "idButton";
+            this.idButton.Size = new System.Drawing.Size(145, 24);
+            this.idButton.TabIndex = 6;
+            this.idButton.Text = "Личный кабинет";
+            this.idButton.UseVisualStyleBackColor = true;
+            this.idButton.Click += new System.EventHandler(this.idButton_Click_1);
             // 
             // mainForm
             // 
@@ -149,9 +128,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(526, 539);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.teleButton1);
-            this.Controls.Add(this.exitButton);
+            this.Controls.Add(this.idButton);
             this.Controls.Add(this.buttonReg1);
             this.Controls.Add(this.buttonEnter);
             this.Controls.Add(this.pictureBox1);
@@ -178,10 +155,8 @@
         private System.Windows.Forms.Button buttonEnter;
         private System.Windows.Forms.Button buttonReg1;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
-        private System.Windows.Forms.Button exitButton;
-        private System.Windows.Forms.Button teleButton1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button idButton;
     }
 }

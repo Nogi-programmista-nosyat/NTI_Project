@@ -25,6 +25,7 @@ namespace window3
             request.ContentType = "application/x-www-form-urlencoded";
             request.Method = "POST";
             user def = new user(); def.sex = 3;
+            
             try
             {
                 Stream dataStream = request.GetRequestStream();

@@ -20,6 +20,7 @@ namespace window3
         loginForm login = new loginForm();
         idForm idform = new idForm();
         user curuser = new user();
+        teleForm tele = new teleForm();
 
         public mainForm()
         {
@@ -30,9 +31,6 @@ namespace window3
         public void loginForm_FormClosed(object sender, EventArgs e)
         {
             this.Close();
-            mainForm main = new mainForm();
-            DialogResult result = main.ShowDialog();
-
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -85,6 +83,8 @@ namespace window3
 
         }
 
+
+
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -92,12 +92,25 @@ namespace window3
             if (login.result.sex < 3)
             {
                 curuser = login.result;
+                
+                this.buttonEnter.Text = "Телеметрия";
+                this.buttonEnter.Click -= button1_Click;
+                this.buttonEnter.Click += new System.EventHandler(next_button1_Click);
+
+                buttonReg1.Visible = false;
 
             }
             this.Show();
 
         }
-        private void exitButton_Click(object sender, EventArgs e)
+
+        private void next_button1_Click(object sender, EventArgs e)
+        {
+            tele.ShowDialog();
+
+        }
+
+            private void exitButton_Click(object sender, EventArgs e)
         {
             
         }
@@ -108,9 +121,11 @@ namespace window3
             this.Close();
         }
 
-        private void Button1_Click_1(object sender, EventArgs e)
+        private void idButton_Click_1(object sender, EventArgs e)
         {
             idform.curuser = curuser;
+            idform.ShowDialog();
+            
         }
     }
 }
