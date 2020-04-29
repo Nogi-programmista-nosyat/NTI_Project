@@ -17,6 +17,8 @@ namespace window3
             InitializeComponent();
             this.nameText.Size = new System.Drawing.Size(245, postComboBox.Size.Height);
             this.ageText.Size = new System.Drawing.Size(ageText.Size.Width, postComboBox.Size.Height);
+            this.ageText.MaxLength = 2;
+            this.expText.MaxLength = 2;
 
         }
 
@@ -33,6 +35,22 @@ namespace window3
             idForm id = new idForm();
             id.Show();
 
+        }
+
+        private void ageText_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(Char.IsDigit(e.KeyChar)) && (e.KeyChar != (char)Keys.Back) && (e.KeyChar != (char)Keys.Delete))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void expText_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(Char.IsDigit(e.KeyChar)) && (e.KeyChar != (char)Keys.Back) && (e.KeyChar != (char)Keys.Delete))
+            {
+                e.Handled = true;
+            }
         }
     }
 }
