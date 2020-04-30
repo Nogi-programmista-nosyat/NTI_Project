@@ -158,7 +158,7 @@
             this.dPicker1.Name = "dPicker1";
             this.dPicker1.Size = new System.Drawing.Size(170, 22);
             this.dPicker1.TabIndex = 4;
-            this.dPicker1.ValueChanged += new System.EventHandler(this.DPicker_ValueChanged);
+            this.dPicker1.TextChanged += new System.EventHandler(this.DPicker_ValueChanged);
             // 
             // dPicker2
             // 
@@ -168,7 +168,7 @@
             this.dPicker2.Name = "dPicker2";
             this.dPicker2.Size = new System.Drawing.Size(170, 22);
             this.dPicker2.TabIndex = 5;
-            this.dPicker2.ValueChanged += new System.EventHandler(this.DPicker_ValueChanged);
+            this.dPicker2.TextChanged += new System.EventHandler(this.DPicker_ValueChanged);
             // 
             // button1
             // 

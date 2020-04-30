@@ -15,7 +15,6 @@ namespace window3
         public teleForm()
         {
             InitializeComponent();
-            
         }
 
         public void teleForm_FormClosed(object sender, EventArgs e)
@@ -27,8 +26,9 @@ namespace window3
 
         private void draw()
         {
+            
             //chartTemp.Visible = true;
-            int a, b = 0;
+            int a = 0, b = 0;
             int posY=0;
             //поиск крайних элементов бд в зависимости от даты
             foreach (devCommit tempCom in dataList)
@@ -56,41 +56,63 @@ namespace window3
             {
                 foreach (ToolStripMenuItem curpar in par.DropDownItems)
                 {
-                    if (!curpar.Checked) continue;
+                    if (!curpar.Checked || curpar.Text == "Отметить все") continue;
+
                     Chart tempChart = new Chart();
                     ChartArea chartArea1 = new ChartArea();
                     Legend Legend1 = new Legend();
                     Title title = new Title();
 
                     title.Text = curpar.Text;
-                    chartArea1.Name = "ChartArea1";
-                    Legend1.Name = "Legend1";
-                    tempChart.Name = curpar.Name;
+                    chartArea1.Name = "chartArea_" + curpar.Name;
+                    Legend1.Name = "legend_" + curpar.Name;
+                    tempChart.Name = "chart_"+curpar.Name;
                     tempChart.Text = curpar.Text;
 
-                    tempChart.Size = new System.Drawing.Size(500,200);
-                    tempChart.Location = new System.Drawing.Point(10,posY);posY += 250;
+                    tempChart.Size = new System.Drawing.Size(500,240);
+                    tempChart.Location = new System.Drawing.Point(10,posY);posY += 260;
                     tempChart.Legends.Add(Legend1);
                     tempChart.Titles.Add(title);
                     tempChart.ChartAreas.Add(chartArea1);
                     infoBox.Controls.Add(tempChart);
-
+                    
                     foreach (ToolStripMenuItem id in id_dev.DropDownItems)
                     {
-                        if (!id.Checked) continue;
+                        if (!id.Checked || id.Text == "Отметить все") continue;
                         Series ser = new Series();
-                        ser.Legend = "Legend1";
+                        ser.Legend = "legend_" + curpar.Name;
                         ser.LegendText = id.Text;
-                        ser.Name = "ser"+id.Text;
-                        ser.ChartArea = "ChartArea1";
+                        ser.Name = "ser_"+curpar.Name+id.Text;
+                        ser.ChartArea = "chartArea_" + curpar.Name;
                         ser.ChartType = SeriesChartType.Line;
                         tempChart.Series.Add(ser);
                     }
                 }
-                /*chartTemp.Series["Температура"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-                chartTemp.Series["Температура"].Points.AddXY("1", 10);
-                chartTemp.Series["Температура"].Points.AddXY("2", 50);
-                chartTemp.Series["Температура"].Points.AddXY("3", 100);*/
+                for(int i = a, count = 0; i < b+1; i++)
+                {
+                    devCommit tempCom = dataList[i];bool flag = false;
+                    foreach (ToolStripMenuItem s  in id_dev.DropDown.Items) if (s.Checked && s.Text == tempCom.dev_id.ToString()) flag = true;
+                    if (!flag) continue;
+                    count++;
+                    foreach (ToolStripMenuItem tempItem in par.DropDownItems) {
+                        if (tempItem.Checked && tempItem.Text != "Отметить все") {
+                            Chart ch = (infoBox.Controls["chart_" + tempItem.Name] as Chart);
+                            Series s = (infoBox.Controls["chart_" + tempItem.Name] as Chart).Series["ser_" + tempItem.Name + tempCom.dev_id.ToString()];
+                            s.Points.AddXY(tempCom.date, Convert.ToDouble(tempCom.GetField(tempItem.Name)));
+                            if (tempItem.Name == "temp") Console.WriteLine(tempCom.temp);
+                            if (s.Points.Count == 1)
+                            {
+                                ch.ChartAreas["chartArea_" + tempItem.Name].AxisY.Maximum = Convert.ToDouble(tempCom.GetField(tempItem.Name));
+                                ch.ChartAreas["chartArea_" + tempItem.Name].AxisY.Minimum = Convert.ToDouble(tempCom.GetField(tempItem.Name));
+                            }
+                            if (ch.ChartAreas["chartArea_" + tempItem.Name].AxisY.Maximum < Convert.ToDouble(tempCom.GetField(tempItem.Name)))
+                                ch.ChartAreas["chartArea_" + tempItem.Name].AxisY.Maximum = Convert.ToDouble(tempCom.GetField(tempItem.Name));
+                            else if (ch.ChartAreas["chartArea_" + tempItem.Name].AxisY.Minimum > Convert.ToDouble(tempCom.GetField(tempItem.Name)))
+                                ch.ChartAreas["chartArea_" + tempItem.Name].AxisY.Minimum = Convert.ToDouble(tempCom.GetField(tempItem.Name));
+                        }
+                    }
+                }
+                
 
             }
             /*if (typeCombo.SelectedIndex == 1)
@@ -183,7 +205,7 @@ namespace window3
             }
             for (int i = 0; i < somedevs.Count; i++)
             {
-                ToolStripMenuItem newItem = new ToolStripMenuItem(somedevs[i]) { CheckOnClick = true };
+                ToolStripMenuItem newItem = new ToolStripMenuItem(somedevs[i]) { CheckOnClick = true, Name="id_"+somedevs[i] };
                 newItem.CheckedChanged += new System.EventHandler(this.всеПоля_CheckedChanged);
                 id_dev.DropDownItems.Add(newItem);
             }
@@ -198,6 +220,7 @@ namespace window3
         private void DPicker_ValueChanged(object sender, EventArgs e)
         {
             if (dPicker1.Value.CompareTo(dPicker2.Value) > 0) dPicker1.Value = dPicker2.Value;
+            draw();
         }
     }
 }

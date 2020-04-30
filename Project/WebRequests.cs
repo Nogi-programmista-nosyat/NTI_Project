@@ -111,6 +111,7 @@ namespace window3
                     reader.Close();
                     if (responseFromServer == "0") return def;
                     List<devCommit> result = JsonConvert.DeserializeObject<List<devCommit>>(responseFromServer);
+                    float fl = result[9].temp;
                     return result;
                 }
             }

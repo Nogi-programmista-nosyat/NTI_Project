@@ -26,6 +26,7 @@ namespace window3
         public int dev_id;
         public string date;
         public string time;
+        public float temp;
         public float vibr;
         public float power;
         public float loading;
@@ -37,6 +38,10 @@ namespace window3
             string[] timArr = time.Split(':');
             dattim = new System.DateTime(Convert.ToInt32(datArr[2]), Convert.ToInt32(datArr[1]), Convert.ToInt32(datArr[0]), 
                 Convert.ToInt32(timArr[0]), Convert.ToInt32(timArr[1]), 0);
+        }
+        public string GetField(string name)
+        {
+            return typeof(devCommit).GetField(name).GetValue(this).ToString();
         }
     }
 }
