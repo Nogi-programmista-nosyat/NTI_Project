@@ -32,19 +32,33 @@ namespace window3
 
         private void regButton2_Click(object sender, EventArgs e)
         {
-            
-            curuser.name = nameText.Text;
-            curuser.age = Convert.ToInt32(ageText.Text);
-            curuser.login = logText.Text;
-            curuser.password = passText.Text;
-            curuser.mail = mailText.Text;
-            curuser.perm_level = postComboBox.SelectedIndex;
-            curuser.position = postComboBox.Text;
-            curuser.experience = Convert.ToInt32(expText.Text);
-            curuser.sex = sexComboBox.SelectedIndex;
-            WebRequests client = new WebRequests();
-            client.registration(curuser);
-            this.Hide();
+            try
+            {
+                curuser.name = nameText.Text;
+                curuser.age = Convert.ToInt32(ageText.Text);
+                curuser.login = logText.Text;
+                curuser.password = passText.Text;
+                curuser.mail = mailText.Text;
+                curuser.perm_level = postComboBox.SelectedIndex;
+                curuser.position = postComboBox.Text;
+                curuser.experience = Convert.ToInt32(expText.Text);
+                curuser.sex = sexComboBox.SelectedIndex;
+                WebRequests client = new WebRequests();
+                client.registration(curuser);
+
+            }
+
+            catch (Exception exp)
+            {
+                warnLabel.Text = "Проверьте введенные данные";
+
+            }
+
+            if ((nameText.Text == "") || (logText.Text == "") || (passText.Text == null) || (mailText.Text == null) || (postComboBox.Text == null) || (sexComboBox.Text == null) || (ageText.Text.ToString() == null)||(expText.Text == null))
+                warnLabel.Text = "Проверьте введенные данные";
+            else
+                this.Hide();
+ 
         }
 
         private void NameText_TextChanged(object sender, EventArgs e)

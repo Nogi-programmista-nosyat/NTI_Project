@@ -127,6 +127,7 @@
     <Content Include="Images\item.ico" />
     <Content Include="Images\Дизайн_1 %28лого, общее горизонтальное%29.png" />
     <Content Include="Images\Дизайн_3 %28лого, складское горизонтальное%29.png" />
+    <Content Include="Images\лого.jpg" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

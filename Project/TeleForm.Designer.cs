@@ -22,10 +22,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.id = new System.Windows.Forms.MenuStrip();
             this.typeCombo = new System.Windows.Forms.ToolStripComboBox();
             this.id_dev = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,6 +46,8 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.showButton = new System.Windows.Forms.Button();
             this.insertButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.id.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartTemp)).BeginInit();
             this.id_devMenu.SuspendLayout();
@@ -60,7 +62,7 @@
             this.par});
             this.id.Location = new System.Drawing.Point(0, 0);
             this.id.Name = "id";
-            this.id.Size = new System.Drawing.Size(800, 32);
+            this.id.Size = new System.Drawing.Size(891, 32);
             this.id.TabIndex = 3;
             this.id.Text = "menuStrip1";
             // 
@@ -160,7 +162,7 @@
             // 
             this.dPicker1.CustomFormat = "d.MM.yyyy HH:mm";
             this.dPicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dPicker1.Location = new System.Drawing.Point(407, 6);
+            this.dPicker1.Location = new System.Drawing.Point(470, 6);
             this.dPicker1.Name = "dPicker1";
             this.dPicker1.Size = new System.Drawing.Size(170, 22);
             this.dPicker1.TabIndex = 4;
@@ -169,30 +171,30 @@
             // 
             this.dPicker2.CustomFormat = "d.MM.yyyy HH:mm";
             this.dPicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dPicker2.Location = new System.Drawing.Point(599, 6);
+            this.dPicker2.Location = new System.Drawing.Point(693, 6);
             this.dPicker2.Name = "dPicker2";
             this.dPicker2.Size = new System.Drawing.Size(170, 22);
             this.dPicker2.TabIndex = 5;
             // 
             // chartTemp
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chartTemp.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartTemp.Legends.Add(legend1);
-            this.chartTemp.Location = new System.Drawing.Point(39, 70);
+            chartArea3.Name = "ChartArea1";
+            this.chartTemp.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chartTemp.Legends.Add(legend3);
+            this.chartTemp.Location = new System.Drawing.Point(39, 55);
             this.chartTemp.Name = "chartTemp";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series1.Legend = "Legend1";
-            series1.Name = "Температура";
-            this.chartTemp.Series.Add(series1);
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series3.Legend = "Legend1";
+            series3.Name = "Температура";
+            this.chartTemp.Series.Add(series3);
             this.chartTemp.Size = new System.Drawing.Size(665, 314);
             this.chartTemp.TabIndex = 6;
             this.chartTemp.Text = "chart1";
-            title1.Name = "Title1";
-            title1.Text = "Наверно машина";
-            this.chartTemp.Titles.Add(title1);
+            title3.Name = "Title1";
+            title3.Text = "Наверно машина";
+            this.chartTemp.Titles.Add(title3);
             this.chartTemp.Click += new System.EventHandler(this.chartTemp_Click);
             // 
             // button1
@@ -235,18 +237,40 @@
             // 
             // insertButton
             // 
-            this.insertButton.Location = new System.Drawing.Point(501, 403);
+            this.insertButton.Location = new System.Drawing.Point(483, 403);
             this.insertButton.Name = "insertButton";
             this.insertButton.Size = new System.Drawing.Size(244, 26);
             this.insertButton.TabIndex = 11;
             this.insertButton.Text = "Добавить запись";
             this.insertButton.UseVisualStyleBackColor = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Location = new System.Drawing.Point(434, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(30, 17);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "От:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Location = new System.Drawing.Point(656, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(31, 17);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "До:";
+            // 
             // teleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(891, 460);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.insertButton);
             this.Controls.Add(this.showButton);
             this.Controls.Add(this.button1);
@@ -254,7 +278,7 @@
             this.Controls.Add(this.dPicker2);
             this.Controls.Add(this.dPicker1);
             this.Controls.Add(this.id);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MainMenuStrip = this.id;
             this.Name = "teleForm";
             this.Text = "teleForm";
@@ -292,5 +316,7 @@
         private System.Windows.Forms.Button insertButton;
         private System.Windows.Forms.ToolStripMenuItem dev_checkAll;
         private System.Windows.Forms.ToolStripMenuItem par_checkAll;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

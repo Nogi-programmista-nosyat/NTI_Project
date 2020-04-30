@@ -23,19 +23,22 @@ namespace window3
 
         private void idForm_Load(object sender, EventArgs e)
         {
-            nameLabel.Text += curuser.name;
-            ageLabel.Text += curuser.age.ToString();
-            statLabel.Text += curuser.position;
-            mailLabel.Text += curuser.mail;
+
+            nameLabel.Text = "Имя: " + curuser.name;
+            ageLabel.Text = "Возраст: " + curuser.age.ToString();
+            statLabel.Text = "Должность: " + curuser.position;
+            mailLabel.Text = "Почта: " + curuser.mail;
             
             if (curuser.sex == 1)
-                sexLabel.Text += "Женский";
+                sexLabel.Text = "Пол: " + "Женский";
             else
-                sexLabel.Text += "Мужской";
+                sexLabel.Text = "Пол: " + "Мужской";
 
             expLabel.Text += curuser.experience.ToString();
+
+
         }
 
-        
+
     }
 }
