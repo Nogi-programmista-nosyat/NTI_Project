@@ -111,10 +111,7 @@ namespace window3
 
         }
 
-            private void exitButton_Click(object sender, EventArgs e)
-        {
-            
-        }
+        
 
         private void ВыходToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -126,6 +123,12 @@ namespace window3
         {
             idform.curuser = curuser;
             idform.ShowDialog();
+        }
+
+        private void закрытьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            flag = true;
+            this.Close();
         }
     }
 }

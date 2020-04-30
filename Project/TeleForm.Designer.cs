@@ -22,14 +22,19 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.id = new System.Windows.Forms.MenuStrip();
             this.typeCombo = new System.Windows.Forms.ToolStripComboBox();
             this.id_dev = new System.Windows.Forms.ToolStripMenuItem();
             this.par = new System.Windows.Forms.ToolStripMenuItem();
+            this.времяРаботыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.уроеньПотребленияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.уровеньНагрузкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.температураToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.уровеньВибрацииToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.chartTemp = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -37,11 +42,6 @@
             this.id_devMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.fdToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.времяРаботыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.уроеньПотребленияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.уровеньНагрузкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.температураToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.уровеньВибрацииToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.id.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartTemp)).BeginInit();
             this.id_devMenu.SuspendLayout();
@@ -68,7 +68,6 @@
             "Таблица"});
             this.typeCombo.Name = "typeCombo";
             this.typeCombo.Size = new System.Drawing.Size(121, 28);
-            this.typeCombo.Click += new System.EventHandler(this.toolStripComboBox1_Click);
             // 
             // id_dev
             // 
@@ -84,73 +83,10 @@
             this.уровеньНагрузкиToolStripMenuItem,
             this.температураToolStripMenuItem,
             this.уровеньВибрацииToolStripMenuItem});
+            
             this.par.Name = "par";
             this.par.Size = new System.Drawing.Size(93, 28);
             this.par.Text = "Параметр";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(451, 10);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(146, 22);
-            this.dateTimePicker1.TabIndex = 4;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(622, 10);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(146, 22);
-            this.dateTimePicker2.TabIndex = 5;
-            // 
-            // chartTemp
-            // 
-            chartArea2.Name = "ChartArea1";
-            this.chartTemp.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chartTemp.Legends.Add(legend2);
-            this.chartTemp.Location = new System.Drawing.Point(39, 56);
-            this.chartTemp.Name = "chartTemp";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series2.Legend = "Legend1";
-            series2.Name = "Температура";
-            this.chartTemp.Series.Add(series2);
-            this.chartTemp.Size = new System.Drawing.Size(665, 314);
-            this.chartTemp.TabIndex = 6;
-            this.chartTemp.Text = "chart1";
-            title2.Name = "Title1";
-            title2.Text = "Наверно машина";
-            this.chartTemp.Titles.Add(title2);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(39, 403);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 26);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Построить";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // id_devMenu
-            // 
-            this.id_devMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.id_devMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fdToolStripMenuItem,
-            this.toolStripMenuItem1});
-            this.id_devMenu.Name = "id_devMenu";
-            this.id_devMenu.Size = new System.Drawing.Size(93, 52);
-            // 
-            // fdToolStripMenuItem
-            // 
-            this.fdToolStripMenuItem.Name = "fdToolStripMenuItem";
-            this.fdToolStripMenuItem.Size = new System.Drawing.Size(92, 24);
-            this.fdToolStripMenuItem.Text = "fd";
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(92, 24);
             // 
             // времяРаботыToolStripMenuItem
             // 
@@ -196,6 +132,70 @@
             this.уровеньВибрацииToolStripMenuItem.Name = "уровеньВибрацииToolStripMenuItem";
             this.уровеньВибрацииToolStripMenuItem.Size = new System.Drawing.Size(240, 26);
             this.уровеньВибрацииToolStripMenuItem.Text = "Уровень вибрации";
+            this.уровеньВибрацииToolStripMenuItem.DropDown.AutoClose = false;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(451, 10);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(146, 22);
+            this.dateTimePicker1.TabIndex = 4;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(622, 10);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(146, 22);
+            this.dateTimePicker2.TabIndex = 5;
+            // 
+            // chartTemp
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chartTemp.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartTemp.Legends.Add(legend1);
+            this.chartTemp.Location = new System.Drawing.Point(39, 56);
+            this.chartTemp.Name = "chartTemp";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Температура";
+            this.chartTemp.Series.Add(series1);
+            this.chartTemp.Size = new System.Drawing.Size(665, 314);
+            this.chartTemp.TabIndex = 6;
+            this.chartTemp.Text = "chart1";
+            title1.Name = "Title1";
+            title1.Text = "Наверно машина";
+            this.chartTemp.Titles.Add(title1);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(39, 403);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(94, 26);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Построить";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // id_devMenu
+            // 
+            this.id_devMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.id_devMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fdToolStripMenuItem,
+            this.toolStripMenuItem1});
+            this.id_devMenu.Name = "id_devMenu";
+            this.id_devMenu.Size = new System.Drawing.Size(93, 52);
+            // 
+            // fdToolStripMenuItem
+            // 
+            this.fdToolStripMenuItem.Name = "fdToolStripMenuItem";
+            this.fdToolStripMenuItem.Size = new System.Drawing.Size(92, 24);
+            this.fdToolStripMenuItem.Text = "fd";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(92, 24);
             // 
             // teleForm
             // 
