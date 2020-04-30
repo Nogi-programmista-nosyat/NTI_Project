@@ -42,6 +42,8 @@
             this.showButton = new System.Windows.Forms.Button();
             this.insertButton = new System.Windows.Forms.Button();
             this.infoBox = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.id.SuspendLayout();
             this.id_devMenu.SuspendLayout();
             this.SuspendLayout();
@@ -55,7 +57,7 @@
             this.par});
             this.id.Location = new System.Drawing.Point(0, 0);
             this.id.Name = "id";
-            this.id.Size = new System.Drawing.Size(800, 32);
+            this.id.Size = new System.Drawing.Size(891, 32);
             this.id.TabIndex = 3;
             this.id.Text = "menuStrip1";
             // 
@@ -152,7 +154,7 @@
             // 
             this.dPicker1.CustomFormat = "d.MM.yyyy HH:mm";
             this.dPicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dPicker1.Location = new System.Drawing.Point(407, 6);
+            this.dPicker1.Location = new System.Drawing.Point(470, 6);
             this.dPicker1.Name = "dPicker1";
             this.dPicker1.Size = new System.Drawing.Size(170, 22);
             this.dPicker1.TabIndex = 4;
@@ -162,7 +164,7 @@
             // 
             this.dPicker2.CustomFormat = "d.MM.yyyy HH:mm";
             this.dPicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dPicker2.Location = new System.Drawing.Point(599, 6);
+            this.dPicker2.Location = new System.Drawing.Point(693, 6);
             this.dPicker2.Name = "dPicker2";
             this.dPicker2.Size = new System.Drawing.Size(170, 22);
             this.dPicker2.TabIndex = 5;
@@ -208,7 +210,7 @@
             // 
             // insertButton
             // 
-            this.insertButton.Location = new System.Drawing.Point(508, 510);
+            this.insertButton.Location = new System.Drawing.Point(483, 403);
             this.insertButton.Name = "insertButton";
             this.insertButton.Size = new System.Drawing.Size(244, 26);
             this.insertButton.TabIndex = 11;
@@ -222,6 +224,25 @@
             this.infoBox.Name = "infoBox";
             this.infoBox.Size = new System.Drawing.Size(717, 407);
             this.infoBox.TabIndex = 12;
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Location = new System.Drawing.Point(434, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(30, 17);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "От:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Location = new System.Drawing.Point(656, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(31, 17);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "До:";
             // 
             // teleForm
             // 
@@ -229,13 +250,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 557);
             this.Controls.Add(this.infoBox);
+            this.ClientSize = new System.Drawing.Size(891, 460);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.insertButton);
             this.Controls.Add(this.showButton);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dPicker2);
             this.Controls.Add(this.dPicker1);
             this.Controls.Add(this.id);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MainMenuStrip = this.id;
             this.Name = "teleForm";
             this.Text = "teleForm";
@@ -271,5 +295,7 @@
         private System.Windows.Forms.ToolStripMenuItem dev_checkAll;
         private System.Windows.Forms.ToolStripMenuItem par_checkAll;
         private System.Windows.Forms.Panel infoBox;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

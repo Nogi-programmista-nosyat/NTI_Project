@@ -50,7 +50,7 @@ namespace window3
 
         private void mainForm_Load(object sender, EventArgs e)
         {
-            idButton.Visible = false;
+            
         }
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
@@ -95,8 +95,14 @@ namespace window3
                 this.buttonEnter.Click -= button1_Click;
                 this.buttonEnter.Click += new System.EventHandler(next_button1_Click);
 
-                buttonReg1.Visible = false;
-                idButton.Visible = true;
+                this.buttonReg1.Text = "Личный кабинет";
+                this.buttonReg1.Click -= button2_Click;
+                this.buttonReg1.Click += new System.EventHandler(idButton_Click_1);
+
+                this.nameLabel.Text = curuser.name;
+
+                //buttonReg1.Visible = false;
+                //idButton.Visible = true;
             }
             this.Show();
 

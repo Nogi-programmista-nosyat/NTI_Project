@@ -40,54 +40,66 @@
             // nameLabel
             // 
             this.nameLabel.AutoSize = true;
+            this.nameLabel.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.nameLabel.ForeColor = System.Drawing.Color.White;
             this.nameLabel.Location = new System.Drawing.Point(28, 25);
             this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(50, 17);
+            this.nameLabel.Size = new System.Drawing.Size(51, 19);
             this.nameLabel.TabIndex = 2;
             this.nameLabel.Text = "ФИО: ";
             // 
             // expLabel
             // 
             this.expLabel.AutoSize = true;
+            this.expLabel.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.expLabel.ForeColor = System.Drawing.Color.White;
             this.expLabel.Location = new System.Drawing.Point(28, 60);
             this.expLabel.Name = "expLabel";
-            this.expLabel.Size = new System.Drawing.Size(49, 17);
+            this.expLabel.Size = new System.Drawing.Size(54, 19);
             this.expLabel.TabIndex = 3;
             this.expLabel.Text = "Стаж: ";
             // 
             // mailLabel
             // 
             this.mailLabel.AutoSize = true;
+            this.mailLabel.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.mailLabel.ForeColor = System.Drawing.Color.White;
             this.mailLabel.Location = new System.Drawing.Point(28, 94);
             this.mailLabel.Name = "mailLabel";
-            this.mailLabel.Size = new System.Drawing.Size(57, 17);
+            this.mailLabel.Size = new System.Drawing.Size(57, 19);
             this.mailLabel.TabIndex = 4;
             this.mailLabel.Text = "Почта: ";
             // 
             // ageLabel
             // 
             this.ageLabel.AutoSize = true;
+            this.ageLabel.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ageLabel.ForeColor = System.Drawing.Color.White;
             this.ageLabel.Location = new System.Drawing.Point(28, 127);
             this.ageLabel.Name = "ageLabel";
-            this.ageLabel.Size = new System.Drawing.Size(70, 17);
+            this.ageLabel.Size = new System.Drawing.Size(74, 19);
             this.ageLabel.TabIndex = 5;
             this.ageLabel.Text = "Возраст: ";
             // 
             // sexLabel
             // 
             this.sexLabel.AutoSize = true;
+            this.sexLabel.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.sexLabel.ForeColor = System.Drawing.Color.White;
             this.sexLabel.Location = new System.Drawing.Point(28, 160);
             this.sexLabel.Name = "sexLabel";
-            this.sexLabel.Size = new System.Drawing.Size(42, 17);
+            this.sexLabel.Size = new System.Drawing.Size(44, 19);
             this.sexLabel.TabIndex = 6;
             this.sexLabel.Text = "Пол: ";
             // 
             // statLabel
             // 
             this.statLabel.AutoSize = true;
+            this.statLabel.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.statLabel.ForeColor = System.Drawing.Color.White;
             this.statLabel.Location = new System.Drawing.Point(28, 192);
             this.statLabel.Name = "statLabel";
-            this.statLabel.Size = new System.Drawing.Size(89, 17);
+            this.statLabel.Size = new System.Drawing.Size(93, 19);
             this.statLabel.TabIndex = 7;
             this.statLabel.Text = "Должность: ";
             // 
@@ -95,13 +107,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(495, 244);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+            this.ClientSize = new System.Drawing.Size(494, 249);
             this.Controls.Add(this.statLabel);
             this.Controls.Add(this.sexLabel);
             this.Controls.Add(this.ageLabel);
             this.Controls.Add(this.mailLabel);
             this.Controls.Add(this.expLabel);
             this.Controls.Add(this.nameLabel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.MinimizeBox = false;
             this.Name = "idForm";
             this.Text = "Личный кабинет";
             this.Load += new System.EventHandler(this.idForm_Load);
