@@ -14,6 +14,7 @@ namespace window3
         public teleForm()
         {
             InitializeComponent();
+            
         }
 
         public void teleForm_FormClosed(object sender, EventArgs e)
@@ -22,31 +23,31 @@ namespace window3
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+        private void visualizeAll()
         {
-            chartTemp.ChartAreas[0].AxisX.ScaleView.Zoom(0,4);
-            chartTemp.ChartAreas[0].CursorX.IsUserEnabled = true;
-            chartTemp.ChartAreas[0].CursorX.IsUserSelectionEnabled = true;
-            chartTemp.ChartAreas[0].AxisX.ScaleView.Zoomable = true;
-            chartTemp.ChartAreas[0].AxisX.ScrollBar.IsPositionedInside = true;
+            chartTemp.Visible = true;
 
-            chartTemp.ChartAreas[0].AxisY.ScaleView.Zoom(0, 50);
-            chartTemp.ChartAreas[0].CursorY.IsUserEnabled = true;
-            chartTemp.ChartAreas[0].CursorY.IsUserSelectionEnabled = true;
-            chartTemp.ChartAreas[0].AxisY.ScaleView.Zoomable = true;
-            chartTemp.ChartAreas[0].AxisY.ScrollBar.IsPositionedInside = true;
-
-
-            int s = 0;
-            for (int i = 1; i < 4; i++)
+            if (typeCombo.SelectedIndex == 0)
             {
-                chartTemp.Series["Температура"].Points.AddXY( i+1 , s + 10);
-                s+=40;
-            }
+                
+                chartTemp.Series["Температура"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column;
+                chartTemp.Series["Температура"].Points.AddXY("1", 10);
+                chartTemp.Series["Температура"].Points.AddXY("2", 50);
+                chartTemp.Series["Температура"].Points.AddXY("3", 100);
 
-            //chartTemp.Series["Температура"].Points.AddXY("1", 10);
-            //chartTemp.Series["Температура"].Points.AddXY("2", 50);
-            //chartTemp.Series["Температура"].Points.AddXY("3", 100);
+            }
+            if (typeCombo.SelectedIndex == 1)
+            {
+                chartTemp.Series["Температура"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+                chartTemp.Series["Температура"].Points.AddXY("1", 1000);
+                chartTemp.Series["Температура"].Points.AddXY("2", 500);
+                chartTemp.Series["Температура"].Points.AddXY("3", 10000);
+            }
+            if (typeCombo.SelectedIndex == 2)
+            {
+                chartTemp.Hide();
+            }
 
         }
 
@@ -74,19 +75,24 @@ namespace window3
             dPicker2.Value = dataList[dataList.Count - 1].dattim;
         }
         public void draw()
+
+            chartTemp.Visible = false;
+
+        }
+
+        private void par_Click(object sender, EventArgs e)
         {
-            
-            if (typeCombo.SelectedIndex==0)
-            {
-            }
-            if (typeCombo.SelectedIndex == 1)
-            {
+            par.DropDown.AutoClose = false;
+        }
 
-            }
-            if (typeCombo.SelectedIndex == 2)
-            {
+        private void teleForm_Click(object sender, EventArgs e)
+        {
+            par.DropDown.Close();
+        }
 
-            }
+        private void chartTemp_Click(object sender, EventArgs e)
+        {
+            par.DropDown.Close();
         }
 
         private void par_checkAll_Click(object sender, EventArgs e)

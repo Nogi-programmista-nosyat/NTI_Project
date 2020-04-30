@@ -193,6 +193,7 @@
             title1.Name = "Title1";
             title1.Text = "Наверно машина";
             this.chartTemp.Titles.Add(title1);
+            this.chartTemp.Click += new System.EventHandler(this.chartTemp_Click);
             // 
             // button1
             // 

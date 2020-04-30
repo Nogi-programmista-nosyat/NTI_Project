@@ -34,10 +34,13 @@
             this.buttonEnter = new System.Windows.Forms.Button();
             this.buttonReg1 = new System.Windows.Forms.Button();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.закрытьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.idButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -88,10 +91,26 @@
             // 
             // notifyIcon1
             // 
+            this.notifyIcon1.ContextMenuStrip = this.contextMenuStrip1;
             this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
             this.notifyIcon1.Text = "notifyIcon1";
             this.notifyIcon1.Visible = true;
             this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.закрытьToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(211, 56);
+            // 
+            // закрытьToolStripMenuItem
+            // 
+            this.закрытьToolStripMenuItem.Name = "закрытьToolStripMenuItem";
+            this.закрытьToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.закрытьToolStripMenuItem.Text = "Закрыть";
+            this.закрытьToolStripMenuItem.Click += new System.EventHandler(this.закрытьToolStripMenuItem_Click);
             // 
             // menuStrip1
             // 
@@ -142,6 +161,7 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.mainForm_FormClosing);
             this.Load += new System.EventHandler(this.mainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -158,5 +178,7 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem;
         private System.Windows.Forms.Button idButton;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem закрытьToolStripMenuItem;
     }
 }

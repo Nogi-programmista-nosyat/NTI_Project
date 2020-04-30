@@ -53,6 +53,7 @@ namespace window3
             /*WebRequests client = new WebRequests();
             user result = client.login("0","123");
             buttonEnter.Text = result.perm_level.ToString();*/
+            idButton.Visible = false;
         }
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
@@ -98,7 +99,7 @@ namespace window3
                 this.buttonEnter.Click += new System.EventHandler(next_button1_Click);
 
                 buttonReg1.Visible = false;
-
+                idButton.Visible = true;
             }
             this.Show();
 
@@ -111,10 +112,7 @@ namespace window3
 
         }
 
-            private void exitButton_Click(object sender, EventArgs e)
-        {
-            
-        }
+        
 
         private void ВыходToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -126,6 +124,12 @@ namespace window3
         {
             idform.curuser = curuser;
             idform.ShowDialog();
+        }
+
+        private void закрытьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            flag = true;
+            this.Close();
         }
     }
 }
