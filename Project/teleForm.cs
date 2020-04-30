@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace window3
 {
@@ -26,18 +27,73 @@ namespace window3
 
         private void draw()
         {
-            chartTemp.Visible = true;
-
-            if (typeCombo.SelectedIndex == 0)
+            //chartTemp.Visible = true;
+            int a, b = 0;
+            int posY=0;
+            //поиск крайних элементов бд в зависимости от даты
+            foreach (devCommit tempCom in dataList)
             {
-                
-                chartTemp.Series["Температура"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-                chartTemp.Series["Температура"].Points.AddXY("1", 10);
-                chartTemp.Series["Температура"].Points.AddXY("2", 50);
-                chartTemp.Series["Температура"].Points.AddXY("3", 100);
+                if (tempCom.dattim.CompareTo(dPicker1.Value) >= 0)
+                {
+                    a = dataList.IndexOf(tempCom);
+                    break;
+                }
+            }
+            foreach (devCommit tempCom in dataList)
+            {
+                if (tempCom.dattim.CompareTo(dPicker2.Value) == 0)
+                {
+                    b = dataList.IndexOf(tempCom);
+                    break;
+                }else if (tempCom.dattim.CompareTo(dPicker2.Value) > 0)
+                {
+                    b = dataList.IndexOf(tempCom)-1;
+                }
 
             }
-            if (typeCombo.SelectedIndex == 1)
+            infoBox.Controls.Clear();
+            if (typeCombo.SelectedIndex == 0)
+            {
+                foreach (ToolStripMenuItem curpar in par.DropDownItems)
+                {
+                    if (!curpar.Checked) continue;
+                    Chart tempChart = new Chart();
+                    ChartArea chartArea1 = new ChartArea();
+                    Legend Legend1 = new Legend();
+                    Title title = new Title();
+
+                    title.Text = curpar.Text;
+                    chartArea1.Name = "ChartArea1";
+                    Legend1.Name = "Legend1";
+                    tempChart.Name = curpar.Name;
+                    tempChart.Text = curpar.Text;
+
+                    tempChart.Size = new System.Drawing.Size(500,200);
+                    tempChart.Location = new System.Drawing.Point(10,posY);posY += 250;
+                    tempChart.Legends.Add(Legend1);
+                    tempChart.Titles.Add(title);
+                    tempChart.ChartAreas.Add(chartArea1);
+                    infoBox.Controls.Add(tempChart);
+
+                    foreach (ToolStripMenuItem id in id_dev.DropDownItems)
+                    {
+                        if (!id.Checked) continue;
+                        Series ser = new Series();
+                        ser.Legend = "Legend1";
+                        ser.LegendText = id.Text;
+                        ser.Name = "ser"+id.Text;
+                        ser.ChartArea = "ChartArea1";
+                        ser.ChartType = SeriesChartType.Line;
+                        tempChart.Series.Add(ser);
+                    }
+                }
+                /*chartTemp.Series["Температура"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+                chartTemp.Series["Температура"].Points.AddXY("1", 10);
+                chartTemp.Series["Температура"].Points.AddXY("2", 50);
+                chartTemp.Series["Температура"].Points.AddXY("3", 100);*/
+
+            }
+            /*if (typeCombo.SelectedIndex == 1)
             {
                 chartTemp.Series["Температура"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column;
                 chartTemp.Series["Температура"].Points.AddXY("1", 1000);
@@ -47,13 +103,8 @@ namespace window3
             if (typeCombo.SelectedIndex == 2)
             {
                 chartTemp.Hide();
-            }
+            }*/
 
-        }
-
-        private void toolStripComboBox1_Click(object sender, EventArgs e)
-        {
-            
         }
         
         private void teleForm_Load(object sender, EventArgs e)
@@ -61,6 +112,8 @@ namespace window3
             WebRequests client = new WebRequests();
             id_dev.DropDown.AutoClose = false;
             par.DropDown.AutoClose = false;
+            id_dev.DropDown.MouseLeave += new System.EventHandler(TeleForm_Leave);
+            par.DropDown.MouseLeave += new System.EventHandler(TeleForm_Leave);
             dataList = client.getDevData(curuser.login, curuser.password);
             devListUpdate();
             for (int i = 0; i < dataList.Count; i++)
@@ -73,18 +126,6 @@ namespace window3
             dPicker2.MaxDate = dataList[dataList.Count - 1].dattim;
             dPicker2.MinDate = dataList[0].dattim;
             dPicker2.Value = dataList[dataList.Count - 1].dattim;
-        }
-
-        private void teleForm_Click(object sender, EventArgs e)
-        {
-            par.DropDown.Close();
-            id_dev.DropDown.Close();
-        }
-
-        private void chartTemp_Click(object sender, EventArgs e)
-        {
-            par.DropDown.Close();
-            id_dev.DropDown.Close();
         }
 
         private void par_checkAll_Click(object sender, EventArgs e)
@@ -148,20 +189,15 @@ namespace window3
             }
         }
 
-        private void ВремяРаботыToolStripMenuItem_Click(object sender, EventArgs e)
+        private void TeleForm_Leave(object sender, EventArgs e)
         {
-            
-        }
-
-        private void Par_Click(object sender, EventArgs e)
-        {
-            par.DropDown.AutoClose = false;
-        }
-
-        private void TeleForm_Click(object sender, EventArgs e)
-        {
-            id_dev.DropDown.Close();
             par.DropDown.Close();
+            id_dev.DropDown.Close();
+        }
+
+        private void DPicker_ValueChanged(object sender, EventArgs e)
+        {
+            if (dPicker1.Value.CompareTo(dPicker2.Value) > 0) dPicker1.Value = dPicker2.Value;
         }
     }
 }

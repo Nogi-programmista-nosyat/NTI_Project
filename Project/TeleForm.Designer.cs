@@ -22,32 +22,27 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.id = new System.Windows.Forms.MenuStrip();
             this.typeCombo = new System.Windows.Forms.ToolStripComboBox();
             this.id_dev = new System.Windows.Forms.ToolStripMenuItem();
             this.dev_checkAll = new System.Windows.Forms.ToolStripMenuItem();
             this.par = new System.Windows.Forms.ToolStripMenuItem();
             this.par_checkAll = new System.Windows.Forms.ToolStripMenuItem();
-            this.времяРаботыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.уроеньПотребленияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.уровеньНагрузкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.уровеньВибрацииToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.температураToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.work_time = new System.Windows.Forms.ToolStripMenuItem();
+            this.power = new System.Windows.Forms.ToolStripMenuItem();
+            this.loading = new System.Windows.Forms.ToolStripMenuItem();
+            this.vibr = new System.Windows.Forms.ToolStripMenuItem();
+            this.temp = new System.Windows.Forms.ToolStripMenuItem();
             this.dPicker1 = new System.Windows.Forms.DateTimePicker();
             this.dPicker2 = new System.Windows.Forms.DateTimePicker();
-            this.chartTemp = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.button1 = new System.Windows.Forms.Button();
             this.id_devMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.fdToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.showButton = new System.Windows.Forms.Button();
             this.insertButton = new System.Windows.Forms.Button();
+            this.infoBox = new System.Windows.Forms.Panel();
             this.id.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartTemp)).BeginInit();
             this.id_devMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,7 +70,6 @@
             this.typeCombo.Size = new System.Drawing.Size(160, 28);
             this.typeCombo.Text = "Вид отображения:";
             this.typeCombo.SelectedIndexChanged += new System.EventHandler(this.всеПоля_CheckedChanged);
-            this.typeCombo.Click += new System.EventHandler(this.toolStripComboBox1_Click);
             // 
             // id_dev
             // 
@@ -97,64 +91,62 @@
             // 
             this.par.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.par_checkAll,
-            this.времяРаботыToolStripMenuItem,
-            this.уроеньПотребленияToolStripMenuItem,
-            this.уровеньНагрузкиToolStripMenuItem,
-            this.уровеньВибрацииToolStripMenuItem,
-            this.температураToolStripMenuItem});
+            this.work_time,
+            this.power,
+            this.loading,
+            this.vibr,
+            this.temp});
             this.par.Name = "par";
             this.par.Size = new System.Drawing.Size(93, 28);
             this.par.Text = "Параметр";
-            this.par.Click += new System.EventHandler(this.Par_Click);
             // 
             // par_checkAll
             // 
             this.par_checkAll.CheckOnClick = true;
             this.par_checkAll.Name = "par_checkAll";
-            this.par_checkAll.Size = new System.Drawing.Size(240, 26);
+            this.par_checkAll.Size = new System.Drawing.Size(270, 26);
             this.par_checkAll.Text = "Отметить все";
             this.par_checkAll.Click += new System.EventHandler(this.par_checkAll_Click);
             // 
-            // времяРаботыToolStripMenuItem
+            // work_time
             // 
-            this.времяРаботыToolStripMenuItem.CheckOnClick = true;
-            this.времяРаботыToolStripMenuItem.Name = "времяРаботыToolStripMenuItem";
-            this.времяРаботыToolStripMenuItem.Size = new System.Drawing.Size(240, 26);
-            this.времяРаботыToolStripMenuItem.Text = "Время работы";
-            this.времяРаботыToolStripMenuItem.CheckedChanged += new System.EventHandler(this.всеПоля_CheckedChanged);
-            this.времяРаботыToolStripMenuItem.Click += new System.EventHandler(this.ВремяРаботыToolStripMenuItem_Click);
+            this.work_time.CheckOnClick = true;
+            this.work_time.Name = "work_time";
+            this.work_time.Size = new System.Drawing.Size(270, 26);
+            this.work_time.Text = "Время работы";
+            this.work_time.CheckedChanged += new System.EventHandler(this.всеПоля_CheckedChanged);
             // 
-            // уроеньПотребленияToolStripMenuItem
+            // power
             // 
-            this.уроеньПотребленияToolStripMenuItem.CheckOnClick = true;
-            this.уроеньПотребленияToolStripMenuItem.Name = "уроеньПотребленияToolStripMenuItem";
-            this.уроеньПотребленияToolStripMenuItem.Size = new System.Drawing.Size(240, 26);
-            this.уроеньПотребленияToolStripMenuItem.Text = "Уроень потребления";
-            this.уроеньПотребленияToolStripMenuItem.CheckedChanged += new System.EventHandler(this.всеПоля_CheckedChanged);
+            this.power.CheckOnClick = true;
+            this.power.Name = "power";
+            this.power.Size = new System.Drawing.Size(270, 26);
+            this.power.Text = "Потребляемая мощность";
+            this.power.CheckedChanged += new System.EventHandler(this.всеПоля_CheckedChanged);
             // 
-            // уровеньНагрузкиToolStripMenuItem
+            // loading
             // 
-            this.уровеньНагрузкиToolStripMenuItem.CheckOnClick = true;
-            this.уровеньНагрузкиToolStripMenuItem.Name = "уровеньНагрузкиToolStripMenuItem";
-            this.уровеньНагрузкиToolStripMenuItem.Size = new System.Drawing.Size(240, 26);
-            this.уровеньНагрузкиToolStripMenuItem.Text = "Уровень нагрузки";
-            this.уровеньНагрузкиToolStripMenuItem.CheckedChanged += new System.EventHandler(this.всеПоля_CheckedChanged);
+            this.loading.CheckOnClick = true;
+            this.loading.Name = "loading";
+            this.loading.Size = new System.Drawing.Size(270, 26);
+            this.loading.Text = "Уровень нагрузки";
+            this.loading.CheckedChanged += new System.EventHandler(this.всеПоля_CheckedChanged);
             // 
-            // уровеньВибрацииToolStripMenuItem
+            // vibr
             // 
-            this.уровеньВибрацииToolStripMenuItem.CheckOnClick = true;
-            this.уровеньВибрацииToolStripMenuItem.Name = "уровеньВибрацииToolStripMenuItem";
-            this.уровеньВибрацииToolStripMenuItem.Size = new System.Drawing.Size(240, 26);
-            this.уровеньВибрацииToolStripMenuItem.Text = "Уровень вибрации";
-            this.уровеньВибрацииToolStripMenuItem.CheckedChanged += new System.EventHandler(this.всеПоля_CheckedChanged);
+            this.vibr.CheckOnClick = true;
+            this.vibr.Name = "vibr";
+            this.vibr.Size = new System.Drawing.Size(270, 26);
+            this.vibr.Text = "Уровень вибрации";
+            this.vibr.CheckedChanged += new System.EventHandler(this.всеПоля_CheckedChanged);
             // 
-            // температураToolStripMenuItem
+            // temp
             // 
-            this.температураToolStripMenuItem.CheckOnClick = true;
-            this.температураToolStripMenuItem.Name = "температураToolStripMenuItem";
-            this.температураToolStripMenuItem.Size = new System.Drawing.Size(240, 26);
-            this.температураToolStripMenuItem.Text = "Температура";
-            this.температураToolStripMenuItem.CheckedChanged += new System.EventHandler(this.всеПоля_CheckedChanged);
+            this.temp.CheckOnClick = true;
+            this.temp.Name = "temp";
+            this.temp.Size = new System.Drawing.Size(270, 26);
+            this.temp.Text = "Температура";
+            this.temp.CheckedChanged += new System.EventHandler(this.всеПоля_CheckedChanged);
             // 
             // dPicker1
             // 
@@ -164,6 +156,7 @@
             this.dPicker1.Name = "dPicker1";
             this.dPicker1.Size = new System.Drawing.Size(170, 22);
             this.dPicker1.TabIndex = 4;
+            this.dPicker1.ValueChanged += new System.EventHandler(this.DPicker_ValueChanged);
             // 
             // dPicker2
             // 
@@ -173,31 +166,11 @@
             this.dPicker2.Name = "dPicker2";
             this.dPicker2.Size = new System.Drawing.Size(170, 22);
             this.dPicker2.TabIndex = 5;
-            // 
-            // chartTemp
-            // 
-            chartArea1.Name = "ChartArea1";
-            this.chartTemp.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartTemp.Legends.Add(legend1);
-            this.chartTemp.Location = new System.Drawing.Point(39, 70);
-            this.chartTemp.Name = "chartTemp";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series1.Legend = "Legend1";
-            series1.Name = "Температура";
-            this.chartTemp.Series.Add(series1);
-            this.chartTemp.Size = new System.Drawing.Size(665, 314);
-            this.chartTemp.TabIndex = 6;
-            this.chartTemp.Text = "chart1";
-            title1.Name = "Title1";
-            title1.Text = "Наверно машина";
-            this.chartTemp.Titles.Add(title1);
-            this.chartTemp.Click += new System.EventHandler(this.chartTemp_Click);
+            this.dPicker2.ValueChanged += new System.EventHandler(this.DPicker_ValueChanged);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(39, 403);
+            this.button1.Location = new System.Drawing.Point(46, 510);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(94, 26);
             this.button1.TabIndex = 7;
@@ -226,7 +199,7 @@
             // 
             // showButton
             // 
-            this.showButton.Location = new System.Drawing.Point(182, 403);
+            this.showButton.Location = new System.Drawing.Point(189, 510);
             this.showButton.Name = "showButton";
             this.showButton.Size = new System.Drawing.Size(244, 26);
             this.showButton.TabIndex = 10;
@@ -235,22 +208,30 @@
             // 
             // insertButton
             // 
-            this.insertButton.Location = new System.Drawing.Point(501, 403);
+            this.insertButton.Location = new System.Drawing.Point(508, 510);
             this.insertButton.Name = "insertButton";
             this.insertButton.Size = new System.Drawing.Size(244, 26);
             this.insertButton.TabIndex = 11;
             this.insertButton.Text = "Добавить запись";
             this.insertButton.UseVisualStyleBackColor = true;
             // 
+            // infoBox
+            // 
+            this.infoBox.AutoScroll = true;
+            this.infoBox.Location = new System.Drawing.Point(35, 69);
+            this.infoBox.Name = "infoBox";
+            this.infoBox.Size = new System.Drawing.Size(717, 407);
+            this.infoBox.TabIndex = 12;
+            // 
             // teleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 557);
+            this.Controls.Add(this.infoBox);
             this.Controls.Add(this.insertButton);
             this.Controls.Add(this.showButton);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.chartTemp);
             this.Controls.Add(this.dPicker2);
             this.Controls.Add(this.dPicker1);
             this.Controls.Add(this.id);
@@ -260,10 +241,8 @@
             this.Text = "teleForm";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.teleForm_FormClosed);
             this.Load += new System.EventHandler(this.teleForm_Load);
-            this.Click += new System.EventHandler(this.TeleForm_Click);
             this.id.ResumeLayout(false);
             this.id.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartTemp)).EndInit();
             this.id_devMenu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -276,21 +255,21 @@
         private System.Windows.Forms.ToolStripComboBox typeCombo;
         private System.Windows.Forms.DateTimePicker dPicker1;
         private System.Windows.Forms.DateTimePicker dPicker2;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chartTemp;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ContextMenuStrip id_devMenu;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem fdToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem id_dev;
         private System.Windows.Forms.ToolStripMenuItem par;
-        private System.Windows.Forms.ToolStripMenuItem времяРаботыToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem уроеньПотребленияToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem уровеньНагрузкиToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem температураToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem уровеньВибрацииToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem work_time;
+        private System.Windows.Forms.ToolStripMenuItem power;
+        private System.Windows.Forms.ToolStripMenuItem loading;
+        private System.Windows.Forms.ToolStripMenuItem temp;
+        private System.Windows.Forms.ToolStripMenuItem vibr;
         private System.Windows.Forms.Button showButton;
         private System.Windows.Forms.Button insertButton;
         private System.Windows.Forms.ToolStripMenuItem dev_checkAll;
         private System.Windows.Forms.ToolStripMenuItem par_checkAll;
+        private System.Windows.Forms.Panel infoBox;
     }
 }
