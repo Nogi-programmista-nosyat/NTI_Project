@@ -28,17 +28,12 @@ namespace window3
             ageLabel.Text = "Возраст: " + curuser.age.ToString();
             statLabel.Text = "Должность: " + curuser.position;
             mailLabel.Text = "Почта: " + curuser.mail;
-            
+            expLabel.Text = "Стаж: " + curuser.experience.ToString();
+
             if (curuser.sex == 1)
                 sexLabel.Text = "Пол: " + "Женский";
             else
                 sexLabel.Text = "Пол: " + "Мужской";
-
-            expLabel.Text += curuser.experience.ToString();
-
-
         }
-
-
     }
 }

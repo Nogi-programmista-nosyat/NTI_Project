@@ -102,5 +102,13 @@ namespace window3
                 e.Handled = true;
             }
         }
+
+        private void RegForm_Load(object sender, EventArgs e)
+        {
+            postComboBox.SelectedIndex = 0;
+            postComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            sexComboBox.SelectedIndex = 0;
+            sexComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+        }              
     }
 }

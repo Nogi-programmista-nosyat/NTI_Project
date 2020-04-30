@@ -64,9 +64,9 @@
             this.buttonEnter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonEnter.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonEnter.ForeColor = System.Drawing.Color.White;
-            this.buttonEnter.Location = new System.Drawing.Point(126, 220);
+            this.buttonEnter.Location = new System.Drawing.Point(124, 238);
             this.buttonEnter.Name = "buttonEnter";
-            this.buttonEnter.Size = new System.Drawing.Size(260, 65);
+            this.buttonEnter.Size = new System.Drawing.Size(282, 65);
             this.buttonEnter.TabIndex = 1;
             this.buttonEnter.Text = "Вход";
             this.buttonEnter.UseVisualStyleBackColor = false;
@@ -81,9 +81,9 @@
             this.buttonReg1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonReg1.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonReg1.ForeColor = System.Drawing.Color.White;
-            this.buttonReg1.Location = new System.Drawing.Point(126, 313);
+            this.buttonReg1.Location = new System.Drawing.Point(124, 333);
             this.buttonReg1.Name = "buttonReg1";
-            this.buttonReg1.Size = new System.Drawing.Size(260, 65);
+            this.buttonReg1.Size = new System.Drawing.Size(282, 65);
             this.buttonReg1.TabIndex = 2;
             this.buttonReg1.Text = "Регистрация ";
             this.buttonReg1.UseVisualStyleBackColor = false;
@@ -140,7 +140,7 @@
             this.nameLabel.AutoSize = true;
             this.nameLabel.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.nameLabel.ForeColor = System.Drawing.Color.White;
-            this.nameLabel.Location = new System.Drawing.Point(265, 89);
+            this.nameLabel.Location = new System.Drawing.Point(239, 45);
             this.nameLabel.Name = "nameLabel";
             this.nameLabel.Size = new System.Drawing.Size(0, 19);
             this.nameLabel.TabIndex = 6;
