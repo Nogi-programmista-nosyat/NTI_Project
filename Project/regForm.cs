@@ -16,7 +16,7 @@ namespace window3
         public regForm()
         {
             InitializeComponent();
-            this.nameText.Size = new System.Drawing.Size(245, postComboBox.Size.Height);
+            this.nameText.Size = new System.Drawing.Size(nameText.Size.Width, postComboBox.Size.Height);
             this.ageText.Size = new System.Drawing.Size(ageText.Size.Width, postComboBox.Size.Height);
             this.ageText.MaxLength = 2;
             this.expText.MaxLength = 2;

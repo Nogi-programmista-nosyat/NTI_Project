@@ -172,7 +172,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(46, 510);
+            this.button1.Location = new System.Drawing.Point(77, 507);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(94, 26);
             this.button1.TabIndex = 7;
@@ -201,7 +201,7 @@
             // 
             // showButton
             // 
-            this.showButton.Location = new System.Drawing.Point(189, 510);
+            this.showButton.Location = new System.Drawing.Point(220, 507);
             this.showButton.Name = "showButton";
             this.showButton.Size = new System.Drawing.Size(244, 26);
             this.showButton.TabIndex = 10;
@@ -210,7 +210,7 @@
             // 
             // insertButton
             // 
-            this.insertButton.Location = new System.Drawing.Point(483, 403);
+            this.insertButton.Location = new System.Drawing.Point(531, 507);
             this.insertButton.Name = "insertButton";
             this.insertButton.Size = new System.Drawing.Size(244, 26);
             this.insertButton.TabIndex = 11;
@@ -220,10 +220,11 @@
             // infoBox
             // 
             this.infoBox.AutoScroll = true;
-            this.infoBox.Location = new System.Drawing.Point(35, 69);
+            this.infoBox.Location = new System.Drawing.Point(68, 71);
             this.infoBox.Name = "infoBox";
-            this.infoBox.Size = new System.Drawing.Size(717, 407);
+            this.infoBox.Size = new System.Drawing.Size(719, 407);
             this.infoBox.TabIndex = 12;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -248,12 +249,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 557);
+            this.ClientSize = new System.Drawing.Size(891, 554);
+            this.Controls.Add(this.insertButton);
             this.Controls.Add(this.infoBox);
-            this.ClientSize = new System.Drawing.Size(891, 460);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.insertButton);
             this.Controls.Add(this.showButton);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dPicker2);
