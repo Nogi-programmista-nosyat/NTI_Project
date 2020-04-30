@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace window3
@@ -14,6 +8,8 @@ namespace window3
     {
         public user curuser = new user();
         List<devCommit> dataList = new List<devCommit>();
+        bool flagToChange = true;
+
 
         public teleForm()
         {
@@ -56,36 +52,28 @@ namespace window3
 
         private void toolStripComboBox1_Click(object sender, EventArgs e)
         {
-
+            
         }
-
+        
         private void teleForm_Load(object sender, EventArgs e)
         {
             WebRequests client = new WebRequests();
+            id_dev.DropDown.AutoClose = true;
+            par.DropDown.AutoClose = true;
             dataList = client.getDevData(curuser.login, curuser.password);
-
-            List<string> somedevs = new List<string>();
-
+            devListUpdate();
             for (int i = 0; i < dataList.Count; i++)
             {
-                if (!somedevs.Contains(dataList[i].dev_id.ToString()))
-                    somedevs.Add(dataList[i].dev_id.ToString());
-                dataList[i].getDate();
+                devCommit tempCom = dataList[i]; tempCom.getDate(); dataList[i] = tempCom;
             }
-
-            for (int i = 0; i < somedevs.Count; i++)
-            {
-                ToolStripMenuItem newItem = new ToolStripMenuItem(somedevs[i]) { Checked = true, CheckOnClick = true };
-                id_dev.DropDownItems.Add(newItem);
-            }
-
-            this.typeCombo.Items.AddRange(new object[] {
-            "Диаграмма",
-            "График",
-            "Таблица"});
-
+            dPicker1.MaxDate = dataList[dataList.Count - 1].dattim;
+            dPicker1.MinDate = dataList[0].dattim;
+            dPicker1.Value = dataList[0].dattim;
+            dPicker2.MaxDate = dataList[dataList.Count - 1].dattim;
+            dPicker2.MinDate = dataList[0].dattim;
+            dPicker2.Value = dataList[dataList.Count - 1].dattim;
         }
-        public void visualizeAll()
+        public void draw()
         {
             
             if (typeCombo.SelectedIndex==0)
@@ -99,6 +87,83 @@ namespace window3
             {
 
             }
+        }
+
+        private void par_checkAll_Click(object sender, EventArgs e)
+        {
+            flagToChange = false;
+            foreach(ToolStripMenuItem someItem in par.DropDownItems)
+            {
+                if (someItem == par_checkAll) continue;
+                if (par_checkAll.Checked)
+                    someItem.Checked = true;
+                else
+                    someItem.Checked = false;
+            }
+            draw(); flagToChange = true;
+        }
+
+        private void dev_checkAll_Click(object sender, EventArgs e)
+        {
+            flagToChange = false;
+            foreach (ToolStripMenuItem someItem in id_dev.DropDownItems)
+            {
+                if (someItem == dev_checkAll) continue;
+                if (dev_checkAll.Checked)
+                    someItem.Checked = true;
+                else
+                    someItem.Checked = false;
+            }
+            draw(); flagToChange = true;
+        }
+
+        private void всеПоля_CheckedChanged(object sender, EventArgs e)
+        {
+            if (flagToChange)
+            {
+                ToolStripMenuItem curItem = new ToolStripMenuItem();
+                if (curItem.GetType() == sender.GetType())
+                {
+                    curItem = (ToolStripMenuItem)sender;
+                    if (curItem.OwnerItem == id_dev) dev_checkAll.Checked = false;
+                    if (curItem.OwnerItem == par) par_checkAll.Checked = false;
+                }
+                draw();
+            }
+        }
+
+        private void devListUpdate()
+        {
+            List<string> somedevs = new List<string>();
+            id_dev.DropDownItems.Clear();
+            id_dev.DropDownItems.Add(dev_checkAll);
+            for (int i = 0; i < dataList.Count; i++)
+            {
+                if (!somedevs.Contains(dataList[i].dev_id.ToString()))
+                    somedevs.Add(dataList[i].dev_id.ToString());
+            }
+            for (int i = 0; i < somedevs.Count; i++)
+            {
+                ToolStripMenuItem newItem = new ToolStripMenuItem(somedevs[i]) { CheckOnClick = true };
+                newItem.CheckedChanged += new System.EventHandler(this.всеПоля_CheckedChanged);
+                id_dev.DropDownItems.Add(newItem);
+            }
+        }
+
+        private void ВремяРаботыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void Par_Click(object sender, EventArgs e)
+        {
+            par.DropDown.AutoClose = false;
+        }
+
+        private void TeleForm_Click(object sender, EventArgs e)
+        {
+            id_dev.DropDown.Close();
+            par.DropDown.Close();
         }
     }
 }
