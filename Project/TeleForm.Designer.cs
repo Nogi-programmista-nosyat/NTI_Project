@@ -207,6 +207,7 @@
             this.showButton.TabIndex = 10;
             this.showButton.Text = "Показать отчёт";
             this.showButton.UseVisualStyleBackColor = true;
+            this.showButton.Click += new System.EventHandler(this.showButton_Click);
             // 
             // insertButton
             // 

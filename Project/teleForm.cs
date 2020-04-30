@@ -10,7 +10,7 @@ namespace window3
         public user curuser = new user();
         List<devCommit> dataList = new List<devCommit>();
         bool flagToChange = true;
-
+        reptForm rept = new reptForm();
 
         public teleForm()
         {
@@ -222,5 +222,12 @@ namespace window3
             if (dPicker1.Value.CompareTo(dPicker2.Value) > 0) dPicker1.Value = dPicker2.Value;
             draw();
         }
+
+        private void showButton_Click(object sender, EventArgs e)
+        {
+             rept.dataList = dataList;
+             rept.Show();
+        }
+
     }
 }

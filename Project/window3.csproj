@@ -76,6 +76,12 @@
     <Compile Include="regForm.Designer.cs">
       <DependentUpon>regForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="reptForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reptForm.Designer.cs">
+      <DependentUpon>reptForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Structs.cs" />
     <Compile Include="teleForm.cs">
       <SubType>Form</SubType>
@@ -105,6 +111,9 @@
     </Compile>
     <EmbeddedResource Include="regForm.resx">
       <DependentUpon>regForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reptForm.resx">
+      <DependentUpon>reptForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="teleForm.resx">
       <DependentUpon>teleForm.cs</DependentUpon>
