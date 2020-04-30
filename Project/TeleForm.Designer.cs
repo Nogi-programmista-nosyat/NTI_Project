@@ -83,10 +83,10 @@
             this.уровеньНагрузкиToolStripMenuItem,
             this.температураToolStripMenuItem,
             this.уровеньВибрацииToolStripMenuItem});
-            
             this.par.Name = "par";
             this.par.Size = new System.Drawing.Size(93, 28);
             this.par.Text = "Параметр";
+            this.par.Click += new System.EventHandler(this.par_Click);
             // 
             // времяРаботыToolStripMenuItem
             // 
@@ -132,7 +132,6 @@
             this.уровеньВибрацииToolStripMenuItem.Name = "уровеньВибрацииToolStripMenuItem";
             this.уровеньВибрацииToolStripMenuItem.Size = new System.Drawing.Size(240, 26);
             this.уровеньВибрацииToolStripMenuItem.Text = "Уровень вибрации";
-            this.уровеньВибрацииToolStripMenuItem.DropDown.AutoClose = false;
             // 
             // dateTimePicker1
             // 
@@ -166,6 +165,7 @@
             title1.Name = "Title1";
             title1.Text = "Наверно машина";
             this.chartTemp.Titles.Add(title1);
+            this.chartTemp.Click += new System.EventHandler(this.chartTemp_Click);
             // 
             // button1
             // 
@@ -213,6 +213,7 @@
             this.Text = "teleForm";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.teleForm_FormClosed);
             this.Load += new System.EventHandler(this.teleForm_Load);
+            this.Click += new System.EventHandler(this.teleForm_Click);
             this.id.ResumeLayout(false);
             this.id.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartTemp)).EndInit();

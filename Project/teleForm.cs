@@ -83,13 +83,22 @@ namespace window3
             }
 
             chartTemp.Visible = false;
+
         }
-        
 
-       
+        private void par_Click(object sender, EventArgs e)
+        {
+            par.DropDown.AutoClose = false;
+        }
 
+        private void teleForm_Click(object sender, EventArgs e)
+        {
+            par.DropDown.Close();
+        }
 
-
-
+        private void chartTemp_Click(object sender, EventArgs e)
+        {
+            par.DropDown.Close();
+        }
     }
 }
