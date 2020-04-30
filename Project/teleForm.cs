@@ -18,12 +18,7 @@ namespace window3
         public teleForm()
         {
             InitializeComponent();
-
-            
-
         }
-
-
 
         public void teleForm_FormClosed(object sender, EventArgs e)
         {
@@ -75,7 +70,7 @@ namespace window3
             {
                 if (!somedevs.Contains(dataList[i].dev_id.ToString()))
                     somedevs.Add(dataList[i].dev_id.ToString());
-                
+                dataList[i].getDate();
             }
 
             for (int i = 0; i < somedevs.Count; i++)
@@ -83,24 +78,6 @@ namespace window3
                 ToolStripMenuItem newItem = new ToolStripMenuItem(somedevs[i]) { Checked = true, CheckOnClick = true };
                 id_dev.DropDownItems.Add(newItem);
             }
-
-            List<string> somedevs = new List<string>();
-
-            for (int i = 0; i<dataList.Count; i++)
-            {
-                if (!somedevs.Contains(dataList[i].dev_id.ToString()))
-                    somedevs.Add(dataList[i].dev_id.ToString());
-            }
-
-            for (int i=0; i<somedevs.Count; i++)
-            {
-                ToolStripMenuItem newItem = new ToolStripMenuItem(somedevs[i]) { Checked = true, CheckOnClick = true };
-                itemToolStripMenuItem.DropDownItems.Add(newItem);
-            }
-
-
-            ToolStripMenuItem saveItem = new ToolStripMenuItem("Сохранить") { Checked = true, CheckOnClick = true };
-            itemToolStripMenuItem.DropDownItems.Add(saveItem);
 
             this.typeCombo.Items.AddRange(new object[] {
             "Диаграмма",

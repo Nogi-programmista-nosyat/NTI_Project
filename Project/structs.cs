@@ -34,9 +34,9 @@ namespace window3
         public void getDate()
         {
             string[] datArr = date.Split('.');
-            string[] timArr = date.Split(':');
+            string[] timArr = time.Split(':');
             dattim = new System.DateTime(Convert.ToInt32(datArr[2]), Convert.ToInt32(datArr[1]), Convert.ToInt32(datArr[0]), 
-                Convert.ToInt32(timArr[0]), Convert.ToInt32(timArr[1]), Convert.ToInt32(timArr[2]));
+                Convert.ToInt32(timArr[0]), Convert.ToInt32(timArr[1]), 0);
         }
     }
 }
