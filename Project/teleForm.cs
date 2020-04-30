@@ -24,14 +24,14 @@ namespace window3
         }
 
 
-        private void visualizeAll()
+        private void draw()
         {
             chartTemp.Visible = true;
 
             if (typeCombo.SelectedIndex == 0)
             {
                 
-                chartTemp.Series["Температура"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column;
+                chartTemp.Series["Температура"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
                 chartTemp.Series["Температура"].Points.AddXY("1", 10);
                 chartTemp.Series["Температура"].Points.AddXY("2", 50);
                 chartTemp.Series["Температура"].Points.AddXY("3", 100);
@@ -39,7 +39,7 @@ namespace window3
             }
             if (typeCombo.SelectedIndex == 1)
             {
-                chartTemp.Series["Температура"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+                chartTemp.Series["Температура"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column;
                 chartTemp.Series["Температура"].Points.AddXY("1", 1000);
                 chartTemp.Series["Температура"].Points.AddXY("2", 500);
                 chartTemp.Series["Температура"].Points.AddXY("3", 10000);
@@ -59,8 +59,8 @@ namespace window3
         private void teleForm_Load(object sender, EventArgs e)
         {
             WebRequests client = new WebRequests();
-            id_dev.DropDown.AutoClose = true;
-            par.DropDown.AutoClose = true;
+            id_dev.DropDown.AutoClose = false;
+            par.DropDown.AutoClose = false;
             dataList = client.getDevData(curuser.login, curuser.password);
             devListUpdate();
             for (int i = 0; i < dataList.Count; i++)
@@ -74,25 +74,17 @@ namespace window3
             dPicker2.MinDate = dataList[0].dattim;
             dPicker2.Value = dataList[dataList.Count - 1].dattim;
         }
-        public void draw()
-
-            chartTemp.Visible = false;
-
-        }
-
-        private void par_Click(object sender, EventArgs e)
-        {
-            par.DropDown.AutoClose = false;
-        }
 
         private void teleForm_Click(object sender, EventArgs e)
         {
             par.DropDown.Close();
+            id_dev.DropDown.Close();
         }
 
         private void chartTemp_Click(object sender, EventArgs e)
         {
             par.DropDown.Close();
+            id_dev.DropDown.Close();
         }
 
         private void par_checkAll_Click(object sender, EventArgs e)

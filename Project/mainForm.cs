@@ -50,9 +50,6 @@ namespace window3
 
         private void mainForm_Load(object sender, EventArgs e)
         {
-            /*WebRequests client = new WebRequests();
-            user result = client.login("0","123");
-            buttonEnter.Text = result.perm_level.ToString();*/
             idButton.Visible = false;
         }
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
