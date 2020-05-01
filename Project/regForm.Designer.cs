@@ -29,6 +29,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(regForm));
             this.postComboBox = new System.Windows.Forms.ComboBox();
             this.postLabel = new System.Windows.Forms.Label();
             this.nameLabel = new System.Windows.Forms.Label();
@@ -55,8 +56,7 @@
             this.postComboBox.Items.AddRange(new object[] {
             "Сотрудник",
             "Руководитель отдела",
-            "Руководитель предприятия",
-            "Администратор"});
+            "Руководитель предприятия"});
             this.postComboBox.Location = new System.Drawing.Point(211, 49);
             this.postComboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.postComboBox.Name = "postComboBox";
@@ -92,7 +92,6 @@
             this.nameText.Name = "nameText";
             this.nameText.Size = new System.Drawing.Size(245, 22);
             this.nameText.TabIndex = 3;
-            this.nameText.TextChanged += new System.EventHandler(this.NameText_TextChanged);
             this.nameText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nameText_KeyPress);
             // 
             // sexLabel
@@ -266,8 +265,10 @@
             this.Controls.Add(this.postLabel);
             this.Controls.Add(this.postComboBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "regForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Регистрация";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.regForm_FormClosed);
             this.Load += new System.EventHandler(this.RegForm_Load);

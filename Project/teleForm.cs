@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 
@@ -17,16 +18,18 @@ namespace window3
             InitializeComponent();
         }
 
+        //Закрытие окна
         public void teleForm_FormClosed(object sender, EventArgs e)
         {
             this.Hide();
-
         }
+
 
         private void draw()
         {
             int a = 0, b = 0;
             int posY=0;
+
             //ПОИСК КРАЙНИХ ИНДЕКСОВ СПИСКА ПО ДАТЕ
             foreach (devCommit tempCom in dataList)
             {
@@ -48,6 +51,7 @@ namespace window3
                 }
             }
             infoBox.Controls.Clear();
+
             //ВЫВОД В ЗАВИСИМОСТИ ОТ ВЫБРАННОГО ТИПА
             //ВЫВОД ГРАФИКОВ/ДИАГРАММ
             if (typeCombo.SelectedIndex == 0 || typeCombo.SelectedIndex == 1)
@@ -120,10 +124,10 @@ namespace window3
                         }
                     }
                 }
-                
-
             }
+
             //ВЫВОД ТАБЛИЦЫ С ИНФОРМЦИЕЙ
+
             if (typeCombo.SelectedIndex == 2)
             {
                 DataGridView data = new DataGridView();
@@ -172,6 +176,16 @@ namespace window3
         
         private void teleForm_Load(object sender, EventArgs e)
         {
+            id_dev.DropDown.BackColor = Color.Black;
+            par.DropDown.BackColor = Color.Black;
+            par.Click += delegate
+            {
+                par.ForeColor = Color.Black;
+            };
+            id_dev.Click += delegate
+            {
+                id_dev.ForeColor = Color.Black;
+            };
             //updTimer.Start();
             id_dev.DropDown.AutoClose = false;
             par.DropDown.AutoClose = false;
@@ -180,6 +194,9 @@ namespace window3
             update();
             dPicker1.Value = dataList[0].dattim;
             dPicker2.Value = dataList[dataList.Count - 1].dattim;
+
+            if (curuser.perm_level < 1)
+                showButton.Visible = false;
         }
 
         private void par_checkAll_Click(object sender, EventArgs e)
@@ -237,14 +254,17 @@ namespace window3
             }
             for (int i = 0; i < somedevs.Count; i++)
             {
-                ToolStripMenuItem newItem = new ToolStripMenuItem(somedevs[i]) { CheckOnClick = true, Name="id_"+somedevs[i] };
+                ToolStripMenuItem newItem = new ToolStripMenuItem(somedevs[i]) { CheckOnClick = true, Name="id_"+somedevs[i], ForeColor = Color.White};
                 newItem.CheckedChanged += new System.EventHandler(this.всеПоля_CheckedChanged);
+
                 id_dev.DropDownItems.Add(newItem);
             }
         }
 
         private void TeleForm_Leave(object sender, EventArgs e)
         {
+            par.ForeColor = Color.White;
+            id_dev.ForeColor = Color.White;
             par.DropDown.Close();
             id_dev.DropDown.Close();
         }
@@ -255,6 +275,7 @@ namespace window3
             draw();
         }
 
+        //Открытие формы отчета
         private void showButton_Click(object sender, EventArgs e)
         {
             rept.dataList = dataList;
@@ -280,5 +301,10 @@ namespace window3
         }
 
         private void Timer1_Tick(object sender, EventArgs e){ update();}
+
+        private void typeCombo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

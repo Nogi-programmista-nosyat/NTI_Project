@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(reptForm));
             this.reptLabel = new System.Windows.Forms.Label();
             this.data = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.data)).BeginInit();
@@ -61,6 +62,7 @@
             this.ClientSize = new System.Drawing.Size(491, 474);
             this.Controls.Add(this.data);
             this.Controls.Add(this.reptLabel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "reptForm";
             this.Text = "Отчет";
             this.Load += new System.EventHandler(this.reptForm_Load);

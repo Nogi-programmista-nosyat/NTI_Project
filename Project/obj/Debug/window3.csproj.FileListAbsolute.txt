@@ -44,3 +44,8 @@ C:\Users\user\source\repos\NTI_Project\Project\obj\Debug\window3.pdb
 C:\Users\user\source\repos\NTI_Project\Project\obj\Debug\window3.csprojAssemblyReference.cache
 D:\Education\НТИ\NTI_Project\Project\obj\Debug\window3.reptForm.resources
 C:\Users\user\source\repos\NTI_Project\Project\obj\Debug\window3.reptForm.resources
+D:\Education\НТИ\NTI_Project\Project\bin\Debug\GMap.NET.Core.dll
+D:\Education\НТИ\NTI_Project\Project\bin\Debug\GMap.NET.WindowsForms.dll
+D:\Education\НТИ\NTI_Project\Project\bin\Debug\GMap.NET.Core.xml
+D:\Education\НТИ\NTI_Project\Project\bin\Debug\GMap.NET.WindowsForms.xml
+D:\Education\НТИ\NTI_Project\Project\obj\Debug\window3.mapForm.resources

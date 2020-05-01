@@ -29,6 +29,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(idForm));
             this.nameLabel = new System.Windows.Forms.Label();
             this.expLabel = new System.Windows.Forms.Label();
             this.mailLabel = new System.Windows.Forms.Label();
@@ -116,8 +117,10 @@
             this.Controls.Add(this.expLabel);
             this.Controls.Add(this.nameLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimizeBox = false;
             this.Name = "idForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Личный кабинет";
             this.Load += new System.EventHandler(this.idForm_Load);
             this.ResumeLayout(false);

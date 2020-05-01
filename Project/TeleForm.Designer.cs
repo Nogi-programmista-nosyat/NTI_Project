@@ -22,6 +22,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(teleForm));
             this.id = new System.Windows.Forms.MenuStrip();
             this.typeCombo = new System.Windows.Forms.ToolStripComboBox();
             this.id_dev = new System.Windows.Forms.ToolStripMenuItem();
@@ -35,7 +36,6 @@
             this.temp = new System.Windows.Forms.ToolStripMenuItem();
             this.dPicker1 = new System.Windows.Forms.DateTimePicker();
             this.dPicker2 = new System.Windows.Forms.DateTimePicker();
-            this.button1 = new System.Windows.Forms.Button();
             this.id_devMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.fdToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,6 +51,7 @@
             // 
             // id
             // 
+            this.id.BackColor = System.Drawing.Color.Black;
             this.id.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.id.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.typeCombo,
@@ -64,6 +65,9 @@
             // 
             // typeCombo
             // 
+            this.typeCombo.BackColor = System.Drawing.Color.Black;
+            this.typeCombo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.typeCombo.ForeColor = System.Drawing.Color.White;
             this.typeCombo.Items.AddRange(new object[] {
             "График",
             "Диаграмма",
@@ -73,20 +77,26 @@
             this.typeCombo.Size = new System.Drawing.Size(160, 28);
             this.typeCombo.Text = "Вид отображения:";
             this.typeCombo.SelectedIndexChanged += new System.EventHandler(this.всеПоля_CheckedChanged);
+            this.typeCombo.Click += new System.EventHandler(this.typeCombo_Click);
             // 
             // id_dev
             // 
+            this.id_dev.BackColor = System.Drawing.Color.Black;
             this.id_dev.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dev_checkAll});
+            this.id_dev.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.id_dev.ForeColor = System.Drawing.Color.White;
+            this.id_dev.ImageTransparentColor = System.Drawing.Color.White;
             this.id_dev.Name = "id_dev";
-            this.id_dev.Size = new System.Drawing.Size(127, 28);
+            this.id_dev.Size = new System.Drawing.Size(138, 28);
             this.id_dev.Text = "Оборудование";
             // 
             // dev_checkAll
             // 
             this.dev_checkAll.CheckOnClick = true;
+            this.dev_checkAll.ForeColor = System.Drawing.Color.White;
             this.dev_checkAll.Name = "dev_checkAll";
-            this.dev_checkAll.Size = new System.Drawing.Size(184, 26);
+            this.dev_checkAll.Size = new System.Drawing.Size(224, 26);
             this.dev_checkAll.Text = "Отметить все";
             this.dev_checkAll.Click += new System.EventHandler(this.dev_checkAll_Click);
             // 
@@ -99,55 +109,63 @@
             this.loading,
             this.vibr,
             this.temp});
+            this.par.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.par.ForeColor = System.Drawing.Color.White;
             this.par.Name = "par";
-            this.par.Size = new System.Drawing.Size(93, 28);
+            this.par.Size = new System.Drawing.Size(102, 28);
             this.par.Text = "Параметр";
             // 
             // par_checkAll
             // 
             this.par_checkAll.CheckOnClick = true;
+            this.par_checkAll.ForeColor = System.Drawing.Color.White;
             this.par_checkAll.Name = "par_checkAll";
-            this.par_checkAll.Size = new System.Drawing.Size(333, 26);
+            this.par_checkAll.Size = new System.Drawing.Size(354, 26);
             this.par_checkAll.Text = "Отметить все";
             this.par_checkAll.Click += new System.EventHandler(this.par_checkAll_Click);
             // 
             // work_time
             // 
             this.work_time.CheckOnClick = true;
+            this.work_time.ForeColor = System.Drawing.Color.White;
             this.work_time.Name = "work_time";
-            this.work_time.Size = new System.Drawing.Size(333, 26);
+            this.work_time.Size = new System.Drawing.Size(354, 26);
             this.work_time.Text = "Время работы, часы";
             this.work_time.CheckedChanged += new System.EventHandler(this.всеПоля_CheckedChanged);
             // 
             // power
             // 
             this.power.CheckOnClick = true;
+            this.power.ForeColor = System.Drawing.Color.White;
             this.power.Name = "power";
-            this.power.Size = new System.Drawing.Size(333, 26);
+            this.power.Size = new System.Drawing.Size(354, 26);
             this.power.Text = "Потребляемая мощность, кВт";
             this.power.CheckedChanged += new System.EventHandler(this.всеПоля_CheckedChanged);
             // 
             // loading
             // 
             this.loading.CheckOnClick = true;
+            this.loading.ForeColor = System.Drawing.Color.White;
             this.loading.Name = "loading";
-            this.loading.Size = new System.Drawing.Size(333, 26);
+            this.loading.Size = new System.Drawing.Size(354, 26);
             this.loading.Text = "Уровень нагрузки, %";
             this.loading.CheckedChanged += new System.EventHandler(this.всеПоля_CheckedChanged);
             // 
             // vibr
             // 
             this.vibr.CheckOnClick = true;
+            this.vibr.ForeColor = System.Drawing.Color.White;
             this.vibr.Name = "vibr";
-            this.vibr.Size = new System.Drawing.Size(333, 26);
+            this.vibr.Size = new System.Drawing.Size(354, 26);
             this.vibr.Text = "Уровень вибрации, жесткие диски";
             this.vibr.CheckedChanged += new System.EventHandler(this.всеПоля_CheckedChanged);
             // 
             // temp
             // 
             this.temp.CheckOnClick = true;
+            this.temp.ForeColor = System.Drawing.Color.White;
             this.temp.Name = "temp";
-            this.temp.Size = new System.Drawing.Size(333, 26);
+            this.temp.Size = new System.Drawing.Size(354, 26);
             this.temp.Text = "Температура, C";
             this.temp.CheckedChanged += new System.EventHandler(this.всеПоля_CheckedChanged);
             // 
@@ -171,15 +189,6 @@
             this.dPicker2.TabIndex = 5;
             this.dPicker2.TextChanged += new System.EventHandler(this.DPicker_ValueChanged);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(77, 507);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 26);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Построить";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // id_devMenu
             // 
             this.id_devMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -202,9 +211,12 @@
             // 
             // showButton
             // 
-            this.showButton.Location = new System.Drawing.Point(220, 507);
+            this.showButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.showButton.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.showButton.ForeColor = System.Drawing.Color.White;
+            this.showButton.Location = new System.Drawing.Point(68, 486);
             this.showButton.Name = "showButton";
-            this.showButton.Size = new System.Drawing.Size(244, 26);
+            this.showButton.Size = new System.Drawing.Size(248, 37);
             this.showButton.TabIndex = 10;
             this.showButton.Text = "Показать отчёт";
             this.showButton.UseVisualStyleBackColor = true;
@@ -212,9 +224,12 @@
             // 
             // insertButton
             // 
-            this.insertButton.Location = new System.Drawing.Point(531, 507);
+            this.insertButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.insertButton.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.insertButton.ForeColor = System.Drawing.Color.White;
+            this.insertButton.Location = new System.Drawing.Point(543, 486);
             this.insertButton.Name = "insertButton";
-            this.insertButton.Size = new System.Drawing.Size(244, 26);
+            this.insertButton.Size = new System.Drawing.Size(244, 37);
             this.insertButton.TabIndex = 11;
             this.insertButton.Text = "Добавить запись";
             this.insertButton.UseVisualStyleBackColor = true;
@@ -222,7 +237,7 @@
             // infoBox
             // 
             this.infoBox.AutoScroll = true;
-            this.infoBox.Location = new System.Drawing.Point(68, 71);
+            this.infoBox.Location = new System.Drawing.Point(68, 64);
             this.infoBox.Name = "infoBox";
             this.infoBox.Size = new System.Drawing.Size(719, 407);
             this.infoBox.TabIndex = 12;
@@ -230,20 +245,24 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(434, 9);
+            this.label1.BackColor = System.Drawing.Color.Black;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(423, 6);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(30, 17);
+            this.label1.Size = new System.Drawing.Size(30, 19);
             this.label1.TabIndex = 12;
             this.label1.Text = "От:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(656, 9);
+            this.label2.BackColor = System.Drawing.Color.Black;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(655, 6);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(31, 17);
+            this.label2.Size = new System.Drawing.Size(32, 19);
             this.label2.TabIndex = 13;
             this.label2.Text = "До:";
             // 
@@ -256,17 +275,18 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.ClientSize = new System.Drawing.Size(891, 554);
             this.Controls.Add(this.insertButton);
             this.Controls.Add(this.infoBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.showButton);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.dPicker2);
             this.Controls.Add(this.dPicker1);
             this.Controls.Add(this.id);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.id;
             this.Name = "teleForm";
             this.Text = "teleForm";
@@ -286,7 +306,6 @@
         private System.Windows.Forms.ToolStripComboBox typeCombo;
         private System.Windows.Forms.DateTimePicker dPicker1;
         private System.Windows.Forms.DateTimePicker dPicker2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ContextMenuStrip id_devMenu;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem fdToolStripMenuItem;

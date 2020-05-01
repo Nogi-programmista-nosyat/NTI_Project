@@ -14,7 +14,6 @@ namespace window3
     {
         public user result = new user();
 
-
         public loginForm()
         {
             InitializeComponent();
@@ -24,12 +23,14 @@ namespace window3
             this.passText.Size = new Size(this.passText.Size.Width, logText.Size.Height);
         }
         
+        //Закрытие формы входа
         public void loginForm_FormClosed(object sender, EventArgs e)
         {
-            this.Hide();
-            
+            this.Hide();    
         }
 
+        //Вход в учетную запись
+        //Проверка правильности введенных данных
         private void buttonEnter_Click(object sender, EventArgs e)
         {
             WebRequests client = new WebRequests();
@@ -39,10 +40,10 @@ namespace window3
             else this.Hide();
         }
 
+        //Изменение графических свойств полей ввода пароля и логина
         private void LoginForm_Load(object sender, EventArgs e)
         {
             Paint += new PaintEventHandler(loginForm_Paint);
-
         }
 
         void loginForm_Paint(object sender, PaintEventArgs e)
