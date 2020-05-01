@@ -49,8 +49,8 @@
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(915, 489);
             this.Controls.Add(this.data);
-            this.Controls.Add(this.reptLabel);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+
+            //this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "reptForm";
             this.Text = "Отчет";
             this.Load += new System.EventHandler(this.reptForm_Load);

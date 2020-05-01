@@ -29,48 +29,51 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mapForm));
-            this.gMapControl1 = new GMap.NET.WindowsForms.GMapControl();
+            this.map = new GMap.NET.WindowsForms.GMapControl();
             this.SuspendLayout();
             // 
-            // gMapControl1
+            // map
             // 
-            this.gMapControl1.Bearing = 0F;
-            this.gMapControl1.CanDragMap = true;
-            this.gMapControl1.GrayScaleMode = false;
-            this.gMapControl1.LevelsKeepInMemmory = 5;
-            this.gMapControl1.Location = new System.Drawing.Point(100, 80);
-            this.gMapControl1.MarkersEnabled = true;
-            this.gMapControl1.MaxZoom = 2;
-            this.gMapControl1.MinZoom = 2;
-            this.gMapControl1.MouseWheelZoomType = GMap.NET.MouseWheelZoomType.MousePositionAndCenter;
-            this.gMapControl1.Name = "gMapControl1";
-            this.gMapControl1.NegativeMode = false;
-            this.gMapControl1.PolygonsEnabled = true;
-            this.gMapControl1.RetryLoadTile = 0;
-            this.gMapControl1.RoutesEnabled = true;
-            this.gMapControl1.ShowTileGridLines = false;
-            this.gMapControl1.Size = new System.Drawing.Size(150, 150);
-            this.gMapControl1.TabIndex = 0;
-            this.gMapControl1.Zoom = 0D;
+            this.map.AutoSize = true;
+            this.map.Bearing = 0F;
+            this.map.CanDragMap = true;
+            this.map.GrayScaleMode = false;
+            this.map.LevelsKeepInMemmory = 5;
+            this.map.Location = new System.Drawing.Point(21, 21);
+            this.map.MarkersEnabled = true;
+            this.map.MaxZoom = 2;
+            this.map.MinZoom = 2;
+            this.map.MouseWheelZoomType = GMap.NET.MouseWheelZoomType.MousePositionAndCenter;
+            this.map.Name = "map";
+            this.map.NegativeMode = false;
+            this.map.PolygonsEnabled = true;
+            this.map.RetryLoadTile = 0;
+            this.map.RoutesEnabled = true;
+            this.map.ShowTileGridLines = false;
+            this.map.Size = new System.Drawing.Size(767, 406);
+            this.map.TabIndex = 0;
+            this.map.Zoom = 0D;
             // 
             // mapForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.gMapControl1);
+            this.Controls.Add(this.map);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "mapForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "mapForm";
+            this.Text = "Карта";
             this.Load += new System.EventHandler(this.mapForm_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private GMap.NET.WindowsForms.GMapControl gMapControl1;
+        private GMap.NET.WindowsForms.GMapControl map;
     }
 }

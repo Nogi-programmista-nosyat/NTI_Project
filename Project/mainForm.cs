@@ -37,7 +37,7 @@ namespace window3
 
         private void mainForm_Load(object sender, EventArgs e)
         {
-            
+            buttonMap.Visible = false;
         }
 
         //Разворачивание из трея при двойной нажатии на иконку
@@ -88,6 +88,9 @@ namespace window3
                 this.buttonReg1.Click += new System.EventHandler(idButton_Click_1);
 
                 this.nameLabel.Text = curuser.name;
+
+                this.buttonMap.Visible = true;
+
             }
             this.Show();
         }

@@ -95,7 +95,7 @@
             this.dev_checkAll.CheckOnClick = true;
             this.dev_checkAll.ForeColor = System.Drawing.Color.White;
             this.dev_checkAll.Name = "dev_checkAll";
-            this.dev_checkAll.Size = new System.Drawing.Size(224, 26);
+            this.dev_checkAll.Size = new System.Drawing.Size(193, 26);
             this.dev_checkAll.Text = "Отметить все";
             this.dev_checkAll.Click += new System.EventHandler(this.dev_checkAll_Click);
             // 
@@ -283,7 +283,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.id;
             this.Name = "teleForm";
-            this.Text = "teleForm";
+            this.Text = "Телеметрия";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.teleForm_FormClosed);
             this.Load += new System.EventHandler(this.teleForm_Load);
             this.id.ResumeLayout(false);

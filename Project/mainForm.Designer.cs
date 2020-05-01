@@ -38,7 +38,7 @@
             this.закрытьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonMap = new System.Windows.Forms.Button();
             this.nameLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -135,22 +135,22 @@
             this.выходToolStripMenuItem.Text = "Выход";
             this.выходToolStripMenuItem.Click += new System.EventHandler(this.ВыходToolStripMenuItem_Click);
             // 
-            // button1
+            // buttonMap
             // 
-            this.button1.BackColor = System.Drawing.Color.Black;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(122, 371);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(282, 65);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Карта";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click_2);
+            this.buttonMap.BackColor = System.Drawing.Color.Black;
+            this.buttonMap.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonMap.FlatAppearance.BorderSize = 0;
+            this.buttonMap.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.buttonMap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonMap.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonMap.ForeColor = System.Drawing.Color.White;
+            this.buttonMap.Location = new System.Drawing.Point(122, 371);
+            this.buttonMap.Name = "buttonMap";
+            this.buttonMap.Size = new System.Drawing.Size(282, 65);
+            this.buttonMap.TabIndex = 8;
+            this.buttonMap.Text = "Карта";
+            this.buttonMap.UseVisualStyleBackColor = false;
+            this.buttonMap.Click += new System.EventHandler(this.button1_Click_2);
             // 
             // nameLabel
             // 
@@ -168,7 +168,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.ClientSize = new System.Drawing.Size(526, 539);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonMap);
             this.Controls.Add(this.nameLabel);
             this.Controls.Add(this.buttonReg1);
             this.Controls.Add(this.buttonEnter);
@@ -203,7 +203,7 @@
         private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem закрытьToolStripMenuItem;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonMap;
         private System.Windows.Forms.Label nameLabel;
     }
 }
