@@ -47,18 +47,21 @@ namespace window3
                 def.sex = 404;return def;
             };
         }
-        public int registration(user nwusr)
+        public int registration(user nwusr, user curuser)
         {
             request = WebRequest.Create("http://nogy.onlinehacktomsk.ru/registration.php");
-            postData = "name=" + nwusr.name 
-                + "&age=" + nwusr.age 
-                + "&sex=" + nwusr.sex 
-                + "&position=" + nwusr.position 
+            postData = 
+                   "name=" + nwusr.name
+                + "&age=" + nwusr.age
+                + "&sex=" + nwusr.sex
+                + "&position=" + nwusr.position
                 + "&experience=" + nwusr.experience
                 + "&password=" + nwusr.password
                 + "&login=" + nwusr.login
-                + "&main=" + nwusr.mail
-                + "&perm_level=" + nwusr.perm_level;
+                + "&mail=" + nwusr.mail
+                + "&perm_level=" + nwusr.perm_level
+                + "&curlogin=" + curuser.login
+                + "&curpassword=" + curuser.password;
             byte[] byteArray = Encoding.UTF8.GetBytes(postData);
             request.ContentLength = byteArray.Length;
             request.ContentType = "application/x-www-form-urlencoded";

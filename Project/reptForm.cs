@@ -22,10 +22,16 @@ namespace window3
             InitializeComponent();
         }
 
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void reptForm_Load(object sender, EventArgs e)
         {
             data.Rows.Clear();
             data.ColumnCount = 5;
+            data.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
             data.Columns[0].HeaderText = "ID"; data.Columns[1].HeaderText = "Дата";
             data.Columns[2].HeaderText = "Время"; data.Columns[3].HeaderText = "Событие";
             data.Columns[4].HeaderText = "Значение - Крит. значение";
@@ -67,7 +73,7 @@ namespace window3
                         if (whatHappened > 0)
                         {
                             data.RowCount++;
-                            data.Rows[rowCount].Height = 40;
+                            data.Rows[rowCount].Height = 60;
                             data.Rows[rowCount].Cells[0].Value = tempCom.dev_id;
                             data.Rows[rowCount].Cells[1].Value = tempCom.date;
                             data.Rows[rowCount].Cells[2].Value = tempCom.time;

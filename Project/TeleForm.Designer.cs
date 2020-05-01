@@ -22,6 +22,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(teleForm));
             this.id = new System.Windows.Forms.MenuStrip();
             this.typeCombo = new System.Windows.Forms.ToolStripComboBox();
@@ -44,8 +48,11 @@
             this.infoBox = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.id.SuspendLayout();
             this.id_devMenu.SuspendLayout();
+            this.infoBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // id
@@ -73,7 +80,7 @@
             "Таблица"});
             this.typeCombo.Name = "typeCombo";
             this.typeCombo.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never;
-            this.typeCombo.Size = new System.Drawing.Size(160, 28);
+            this.typeCombo.Size = new System.Drawing.Size(170, 28);
             this.typeCombo.Text = "Вид отображения:";
             this.typeCombo.SelectedIndexChanged += new System.EventHandler(this.всеПоля_CheckedChanged);
             this.typeCombo.Click += new System.EventHandler(this.typeCombo_Click);
@@ -95,7 +102,7 @@
             this.dev_checkAll.CheckOnClick = true;
             this.dev_checkAll.ForeColor = System.Drawing.Color.White;
             this.dev_checkAll.Name = "dev_checkAll";
-            this.dev_checkAll.Size = new System.Drawing.Size(224, 26);
+            this.dev_checkAll.Size = new System.Drawing.Size(193, 26);
             this.dev_checkAll.Text = "Отметить все";
             this.dev_checkAll.Click += new System.EventHandler(this.dev_checkAll_Click);
             // 
@@ -236,6 +243,7 @@
             // infoBox
             // 
             this.infoBox.AutoScroll = true;
+            this.infoBox.Controls.Add(this.chart1);
             this.infoBox.Location = new System.Drawing.Point(68, 64);
             this.infoBox.Name = "infoBox";
             this.infoBox.Size = new System.Drawing.Size(719, 407);
@@ -247,7 +255,7 @@
             this.label1.BackColor = System.Drawing.Color.Black;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(423, 6);
+            this.label1.Location = new System.Drawing.Point(434, 6);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(30, 19);
             this.label1.TabIndex = 12;
@@ -265,10 +273,30 @@
             this.label2.TabIndex = 13;
             this.label2.Text = "До:";
             // 
+            // chart1
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(136, 63);
+            this.chart1.Name = "chart1";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(300, 300);
+            this.chart1.TabIndex = 0;
+            this.chart1.Text = "chart1";
+            title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            title1.Name = "Title1";
+            this.chart1.Titles.Add(title1);
+            // 
             // teleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.ClientSize = new System.Drawing.Size(891, 554);
             this.Controls.Add(this.insertButton);
@@ -282,13 +310,16 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.id;
+            this.MaximizeBox = false;
             this.Name = "teleForm";
-            this.Text = "teleForm";
+            this.Text = "Телеметрия";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.teleForm_FormClosed);
             this.Load += new System.EventHandler(this.teleForm_Load);
             this.id.ResumeLayout(false);
             this.id.PerformLayout();
             this.id_devMenu.ResumeLayout(false);
+            this.infoBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -317,5 +348,6 @@
         private System.Windows.Forms.Panel infoBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
     }
 }

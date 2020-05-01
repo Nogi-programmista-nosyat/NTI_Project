@@ -15,8 +15,12 @@ namespace window3
         static void Main()
         {
             Application.EnableVisualStyles();
+            if (Environment.OSVersion.Version.Major >= 6) SetProcessDPIAware();
+            Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new mainForm());
+            Application.Run(new mainForm());             //редактируем как нужно
         }
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        private static extern bool SetProcessDPIAware();
     }
 }

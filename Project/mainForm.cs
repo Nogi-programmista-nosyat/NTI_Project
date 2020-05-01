@@ -61,12 +61,6 @@ namespace window3
         }
         
         //При нажатии на кнопку открытие формы регистрации 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            reg.ShowDialog();
-            this.Show();
-        }
 
         //При входе в учетную запись на главном экране переопределяются кнопки
         //"Вход" => "Телеметрия"
@@ -79,15 +73,17 @@ namespace window3
             {
                 curuser = login.result;
                 
-                this.buttonEnter.Text = "Телеметрия";
-                this.buttonEnter.Click -= button1_Click;
-                this.buttonEnter.Click += new System.EventHandler(next_button1_Click);
+                buttonEnter.Text = "Телеметрия";
+                buttonEnter.Click -= button1_Click;
+                buttonEnter.Click += new System.EventHandler(next_button1_Click);
 
-                this.buttonReg1.Text = "Личный кабинет";
-                this.buttonReg1.Click -= button2_Click;
-                this.buttonReg1.Click += new System.EventHandler(idButton_Click_1);
-
-                this.nameLabel.Text = curuser.name;
+                idButton.Text = "Личный кабинет";
+                idButton.Click += new System.EventHandler(idButton_Click_1);
+                idButton.Visible = true;
+                mapButton.Visible = true;
+                if(curuser.perm_level==3)
+                    regButton.Visible = true;
+                nameLabel.Text = curuser.name;
             }
             this.Show();
         }
@@ -123,6 +119,14 @@ namespace window3
         private void button1_Click_2(object sender, EventArgs e)
         {
             map.ShowDialog();
+        }
+
+        private void Button2_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            reg.curuser = curuser;
+            reg.ShowDialog();
+            this.Show();
         }
     }
 }

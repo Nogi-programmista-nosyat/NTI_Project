@@ -49,3 +49,6 @@ D:\Education\НТИ\NTI_Project\Project\bin\Debug\GMap.NET.WindowsForms.dll
 D:\Education\НТИ\NTI_Project\Project\bin\Debug\GMap.NET.Core.xml
 D:\Education\НТИ\NTI_Project\Project\bin\Debug\GMap.NET.WindowsForms.xml
 D:\Education\НТИ\NTI_Project\Project\obj\Debug\window3.mapForm.resources
+C:\Users\user\source\repos\NTI_Project\Project\bin\Debug\GMap.NET.Core.xml
+C:\Users\user\source\repos\NTI_Project\Project\bin\Debug\GMap.NET.WindowsForms.xml
+C:\Users\user\source\repos\NTI_Project\Project\obj\Debug\window3.mapForm.resources

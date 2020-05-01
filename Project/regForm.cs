@@ -33,19 +33,21 @@ namespace window3
         //а также отправка их на сервер
         private void regButton2_Click(object sender, EventArgs e)
         {
+            int result = 0;
             try
             {
-                curuser.name = nameText.Text;
-                curuser.age = Convert.ToInt32(ageText.Text);
-                curuser.login = logText.Text;
-                curuser.password = passText.Text;
-                curuser.mail = mailText.Text;
-                curuser.perm_level = postComboBox.SelectedIndex;
-                curuser.position = postComboBox.Text;
-                curuser.experience = Convert.ToInt32(expText.Text);
-                curuser.sex = sexComboBox.SelectedIndex;
+                user newuser = new user();
+                newuser.name = nameText.Text;
+                newuser.age = Convert.ToInt32(ageText.Text);
+                newuser.login = logText.Text;
+                newuser.password = passText.Text;
+                newuser.mail = mailText.Text;
+                newuser.perm_level = postComboBox.SelectedIndex;
+                newuser.position = postComboBox.Text;
+                newuser.experience = Convert.ToInt32(expText.Text);
+                newuser.sex = sexComboBox.SelectedIndex;
                 WebRequests client = new WebRequests();
-                client.registration(curuser);
+                result = client.registration(newuser, curuser);
             }
 
             catch (Exception exp)
@@ -55,7 +57,7 @@ namespace window3
 
             if ((nameText.Text == "") || (logText.Text == "") || (passText.Text == null) || (mailText.Text == null) || (postComboBox.Text == null) || (sexComboBox.Text == null) || (ageText.Text.ToString() == null)||(expText.Text == null))
                 warnLabel.Text = "Проверьте введенные данные";
-            else
+            else if(result == 3)
                 this.Hide();
         }
 

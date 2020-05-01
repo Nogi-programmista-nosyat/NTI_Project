@@ -66,6 +66,7 @@ namespace window3
                     Title title = new Title();
 
                     title.Text = curpar.Text;
+                    title.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
                     chartArea1.Name = "chartArea_" + curpar.Name;
                     Legend1.Name = "legend_" + curpar.Name;
                     tempChart.Name = "chart_"+curpar.Name;
@@ -74,10 +75,10 @@ namespace window3
                     chartArea1.CursorX.IsUserEnabled = true;
                     chartArea1.CursorX.IsUserSelectionEnabled = true;
                     chartArea1.AxisX.ScaleView.Zoomable = true;
-                    chartArea1.AxisX.ScrollBar.IsPositionedInside = true;
+                    chartArea1.AxisX.ScrollBar.IsPositionedInside = false;
 
-                    tempChart.Size = new System.Drawing.Size(500,240);
-                    tempChart.Location = new System.Drawing.Point(10,posY);posY += 260;
+                    tempChart.Size = new System.Drawing.Size(infoBox.Width - 30,320);
+                    tempChart.Location = new System.Drawing.Point(0,posY);posY += 350;
                     tempChart.Legends.Add(Legend1);
                     tempChart.Titles.Add(title);
                     tempChart.ChartAreas.Add(chartArea1);
@@ -89,6 +90,7 @@ namespace window3
                         if (!id.Checked || id.Text == "Отметить все") continue;
                         Series ser = new Series();
                         ser.Legend = "legend_" + curpar.Name;
+                        ser.BorderWidth = 3;
                         ser.LegendText = id.Text;
                         ser.Name = "ser_"+curpar.Name+id.Text;
                         ser.ChartArea = "chartArea_" + curpar.Name;
@@ -134,6 +136,7 @@ namespace window3
                 data.Size = infoBox.Size;
                 data.ColumnCount = 8;
                 //data.RowCount = 1;
+                data.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 data.Columns[0].HeaderText = "ID"; data.Columns[0].Name = "dev_id";
                 data.Columns[1].HeaderText = "Дата"; data.Columns[0].Name = "date";
                 data.Columns[2].HeaderText = "Время"; data.Columns[0].Name = "time";
@@ -194,9 +197,6 @@ namespace window3
             update();
             dPicker1.Value = dataList[0].dattim;
             dPicker2.Value = dataList[dataList.Count - 1].dattim;
-
-            if (curuser.perm_level < 1)
-                showButton.Visible = false;
         }
 
         private void par_checkAll_Click(object sender, EventArgs e)
