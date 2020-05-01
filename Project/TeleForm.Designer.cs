@@ -44,7 +44,6 @@
             this.infoBox = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.updTimer = new System.Windows.Forms.Timer(this.components);
             this.id.SuspendLayout();
             this.id_devMenu.SuspendLayout();
             this.SuspendLayout();
@@ -247,11 +246,6 @@
             this.label2.TabIndex = 13;
             this.label2.Text = "До:";
             // 
-            // updTimer
-            // 
-            this.updTimer.Interval = 60000;
-            this.updTimer.Tick += new System.EventHandler(this.Timer1_Tick);
-            // 
             // teleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -304,6 +298,5 @@
         private System.Windows.Forms.Panel infoBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Timer updTimer;
     }
 }

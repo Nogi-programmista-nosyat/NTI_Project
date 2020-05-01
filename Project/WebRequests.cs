@@ -110,9 +110,40 @@ namespace window3
                     response.Close();
                     reader.Close();
                     if (responseFromServer == "0") return def;
+                    List<devCommit> result = JsonConvert.DeserializeObject<List<devCommit>>(responseFromServer);                    return result;
+                }
+            }
+            catch (System.Net.WebException e)
+            {
+                return def;
+            };
+        }
+
+        public devCommit getCritData(string login, string password)
+        {
+            request = WebRequest.Create("http://nogy.onlinehacktomsk.ru/getcrit.php");
+            postData = "login=" + login + "&password=" + password;
+            byte[] byteArray = Encoding.UTF8.GetBytes(postData);
+            request.ContentLength = byteArray.Length;
+            request.ContentType = "application/x-www-form-urlencoded";
+            request.Method = "POST";
+            devCommit def = new devCommit();
+
+            try
+            {
+                Stream dataStream = request.GetRequestStream();
+                dataStream.Write(byteArray, 0, byteArray.Length);
+                dataStream.Close();
+                WebResponse response = request.GetResponse();
+                using (dataStream = response.GetResponseStream())
+                {
+                    StreamReader reader = new StreamReader(dataStream);
+                    string responseFromServer = reader.ReadToEnd();
+                    response.Close();
+                    reader.Close();
+                    if (responseFromServer == "0") return def;
                     List<devCommit> result = JsonConvert.DeserializeObject<List<devCommit>>(responseFromServer);
-                    float fl = result[9].temp;
-                    return result;
+                    return result[0];
                 }
             }
             catch (System.Net.WebException e)

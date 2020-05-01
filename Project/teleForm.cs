@@ -11,6 +11,7 @@ namespace window3
         List<devCommit> dataList = new List<devCommit>();
         bool flagToChange = true;
         reptForm rept = new reptForm();
+        int a = 0, b = 0;
 
         public teleForm()
         {
@@ -25,7 +26,6 @@ namespace window3
 
         private void draw()
         {
-            int a = 0, b = 0;
             int posY=0;
             //ПОИСК КРАЙНИХ ИНДЕКСОВ СПИСКА ПО ДАТЕ
             foreach (devCommit tempCom in dataList)
@@ -257,9 +257,13 @@ namespace window3
 
         private void showButton_Click(object sender, EventArgs e)
         {
+            rept = new reptForm();
             rept.dataList = dataList;
             rept.par = par;
             rept.id_dev = id_dev;
+            rept.a = a; rept.b = b;
+            WebRequests client = new WebRequests();
+            rept.critParam = client.getCritData(curuser.login, curuser.password);
             rept.Show();
         }
 
