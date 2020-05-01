@@ -23,14 +23,11 @@ namespace window3
 
         }
 
-
         private void draw()
         {
-            
-            //chartTemp.Visible = true;
             int a = 0, b = 0;
             int posY=0;
-            //поиск крайних элементов бд в зависимости от даты
+            //ПОИСК КРАЙНИХ ИНДЕКСОВ СПИСКА ПО ДАТЕ
             foreach (devCommit tempCom in dataList)
             {
                 if (tempCom.dattim.CompareTo(dPicker1.Value) >= 0)
@@ -49,10 +46,11 @@ namespace window3
                 {
                     b = dataList.IndexOf(tempCom)-1;
                 }
-
             }
             infoBox.Controls.Clear();
-            if (typeCombo.SelectedIndex == 0)
+            //ВЫВОД В ЗАВИСИМОСТИ ОТ ВЫБРАННОГО ТИПА
+            //ВЫВОД ГРАФИКОВ/ДИАГРАММ
+            if (typeCombo.SelectedIndex == 0 || typeCombo.SelectedIndex == 1)
             {
                 foreach (ToolStripMenuItem curpar in par.DropDownItems)
                 {
@@ -69,11 +67,17 @@ namespace window3
                     tempChart.Name = "chart_"+curpar.Name;
                     tempChart.Text = curpar.Text;
 
+                    chartArea1.CursorX.IsUserEnabled = true;
+                    chartArea1.CursorX.IsUserSelectionEnabled = true;
+                    chartArea1.AxisX.ScaleView.Zoomable = true;
+                    chartArea1.AxisX.ScrollBar.IsPositionedInside = true;
+
                     tempChart.Size = new System.Drawing.Size(500,240);
                     tempChart.Location = new System.Drawing.Point(10,posY);posY += 260;
                     tempChart.Legends.Add(Legend1);
                     tempChart.Titles.Add(title);
                     tempChart.ChartAreas.Add(chartArea1);
+
                     infoBox.Controls.Add(tempChart);
                     
                     foreach (ToolStripMenuItem id in id_dev.DropDownItems)
@@ -84,7 +88,10 @@ namespace window3
                         ser.LegendText = id.Text;
                         ser.Name = "ser_"+curpar.Name+id.Text;
                         ser.ChartArea = "chartArea_" + curpar.Name;
-                        ser.ChartType = SeriesChartType.Line;
+                        if (typeCombo.SelectedIndex == 0)
+                            ser.ChartType = SeriesChartType.Line;
+                        else
+                            ser.ChartType = SeriesChartType.Column;
                         tempChart.Series.Add(ser);
                     }
                 }
@@ -102,6 +109,7 @@ namespace window3
                             if (tempItem.Name == "temp") Console.WriteLine(tempCom.temp);
                             if (s.Points.Count == 1)
                             {
+                                //ch.ChartAreas["chartArea_" + tempItem.Name].AxisX.ScaleView.Zoom(0, 4);
                                 ch.ChartAreas["chartArea_" + tempItem.Name].AxisY.Maximum = Convert.ToDouble(tempCom.GetField(tempItem.Name));
                                 ch.ChartAreas["chartArea_" + tempItem.Name].AxisY.Minimum = Convert.ToDouble(tempCom.GetField(tempItem.Name));
                             }
@@ -115,38 +123,62 @@ namespace window3
                 
 
             }
-            /*if (typeCombo.SelectedIndex == 1)
-            {
-                chartTemp.Series["Температура"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column;
-                chartTemp.Series["Температура"].Points.AddXY("1", 1000);
-                chartTemp.Series["Температура"].Points.AddXY("2", 500);
-                chartTemp.Series["Температура"].Points.AddXY("3", 10000);
-            }
+            //ВЫВОД ТАБЛИЦЫ С ИНФОРМЦИЕЙ
             if (typeCombo.SelectedIndex == 2)
             {
-                chartTemp.Hide();
-            }*/
+                DataGridView data = new DataGridView();
+                data.Size = infoBox.Size;
+                data.ColumnCount = 8;
+                //data.RowCount = 1;
+                data.Columns[0].HeaderText = "ID"; data.Columns[0].Name = "dev_id";
+                data.Columns[1].HeaderText = "Дата"; data.Columns[0].Name = "date";
+                data.Columns[2].HeaderText = "Время"; data.Columns[0].Name = "time";
+                data.ColumnHeadersHeight = 80;
+                int count = 3;
+                foreach (ToolStripMenuItem curpar in par.DropDownItems)
+                {
+                    if (!curpar.Checked || curpar.Text == "Отметить все") continue;
+                    data.Columns[count].HeaderText = curpar.Text;
+                    data.Columns[count].Name = curpar.Name;
+                    count++;
+                }
+                data.ColumnCount = count;
+                int rowCount = 0;
+                for (int i = a; i < b + 1; i++)
+                {
+                    devCommit tempCom = dataList[i]; bool flag = false;
+                    foreach (ToolStripMenuItem s in id_dev.DropDown.Items) if (s.Checked && s.Text == tempCom.dev_id.ToString()) flag = true;
+                    if (!flag) continue;
+                    data.RowCount++;
+                    int colCount = 3;
+                    data.Rows[rowCount].Cells[0].Value = tempCom.dev_id;
+                    data.Rows[rowCount].Cells[1].Value = tempCom.date;
+                    data.Rows[rowCount].Cells[2].Value = tempCom.time;
+                    foreach (ToolStripMenuItem tempItem in par.DropDownItems)
+                    {
+                        if (tempItem.Checked && tempItem.Text != "Отметить все")
+                        {
+                            data.Rows[rowCount].Cells[colCount].Value = tempCom.GetField(tempItem.Name);
+                            colCount++;
+                        }
+                    }
+                    rowCount++;
+                }
+                //data.RowCount--;
+                infoBox.Controls.Add(data);
+            }
 
         }
         
         private void teleForm_Load(object sender, EventArgs e)
         {
-            WebRequests client = new WebRequests();
+            //updTimer.Start();
             id_dev.DropDown.AutoClose = false;
             par.DropDown.AutoClose = false;
             id_dev.DropDown.MouseLeave += new System.EventHandler(TeleForm_Leave);
             par.DropDown.MouseLeave += new System.EventHandler(TeleForm_Leave);
-            dataList = client.getDevData(curuser.login, curuser.password);
-            devListUpdate();
-            for (int i = 0; i < dataList.Count; i++)
-            {
-                devCommit tempCom = dataList[i]; tempCom.getDate(); dataList[i] = tempCom;
-            }
-            dPicker1.MaxDate = dataList[dataList.Count - 1].dattim;
-            dPicker1.MinDate = dataList[0].dattim;
+            update();
             dPicker1.Value = dataList[0].dattim;
-            dPicker2.MaxDate = dataList[dataList.Count - 1].dattim;
-            dPicker2.MinDate = dataList[0].dattim;
             dPicker2.Value = dataList[dataList.Count - 1].dattim;
         }
 
@@ -225,9 +257,28 @@ namespace window3
 
         private void showButton_Click(object sender, EventArgs e)
         {
-             rept.dataList = dataList;
-             rept.Show();
+            rept.dataList = dataList;
+            rept.par = par;
+            rept.id_dev = id_dev;
+            rept.Show();
         }
 
+        void update()
+        {
+            WebRequests client = new WebRequests();
+            dataList = client.getDevData(curuser.login, curuser.password);
+            devListUpdate();
+            for (int i = 0; i < dataList.Count; i++)
+            {
+                devCommit tempCom = dataList[i]; tempCom.getDate(); dataList[i] = tempCom;
+            }
+            dPicker1.MaxDate = dataList[dataList.Count - 1].dattim;
+            dPicker1.MinDate = dataList[0].dattim;
+            dPicker2.MaxDate = dataList[dataList.Count - 1].dattim;
+            dPicker2.MinDate = dataList[0].dattim;
+            draw();
+        }
+
+        private void Timer1_Tick(object sender, EventArgs e){ update();}
     }
 }

@@ -21,7 +21,6 @@ namespace window3
         idForm idform = new idForm();
         user curuser = new user();
         teleForm tele = new teleForm();
-
         public mainForm()
         {
             InitializeComponent();
@@ -133,6 +132,11 @@ namespace window3
         {
             flag = true;
             this.Close();
+        }
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            System.Environment.Exit(1);
         }
     }
 }

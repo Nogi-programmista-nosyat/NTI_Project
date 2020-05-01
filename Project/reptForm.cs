@@ -13,6 +13,8 @@ namespace window3
     public partial class reptForm : Form
     {
         public List<devCommit> dataList = new List<devCommit>();
+        public ToolStripMenuItem id_dev;
+        public ToolStripMenuItem par;
 
         public reptForm()
         {
@@ -21,20 +23,7 @@ namespace window3
 
         private void reptForm_Load(object sender, EventArgs e)
         {
-            //data.DataSource = dataList;
-
-            //1 столбец, текстовый
-            DataGridViewTextBoxColumn column0 = new DataGridViewTextBoxColumn();
-            column0.Name = "id";
-            column0.HeaderText = "ID ";
-            //2 столбец, текстовый
-            DataGridViewTextBoxColumn column1 = new DataGridViewTextBoxColumn();
-            column1.Name = "load";
-            column1.HeaderText = "Загрузка, %";
-            DataGridViewTextBoxColumn column2 = new DataGridViewTextBoxColumn();
-            column2.Name = "data";
-            column2.HeaderText = "Дата ";
-            data.Columns.AddRange(column0, column1, column2);
+                        
 
             for (int i = 0; i < dataList.Count; i++)
             {

@@ -43,3 +43,4 @@ C:\Users\user\source\repos\NTI_Project\Project\obj\Debug\window3.exe
 C:\Users\user\source\repos\NTI_Project\Project\obj\Debug\window3.pdb
 C:\Users\user\source\repos\NTI_Project\Project\obj\Debug\window3.csprojAssemblyReference.cache
 D:\Education\НТИ\NTI_Project\Project\obj\Debug\window3.reptForm.resources
+C:\Users\user\source\repos\NTI_Project\Project\obj\Debug\window3.reptForm.resources

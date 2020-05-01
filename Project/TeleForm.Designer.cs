@@ -44,6 +44,7 @@
             this.infoBox = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.updTimer = new System.Windows.Forms.Timer(this.components);
             this.id.SuspendLayout();
             this.id_devMenu.SuspendLayout();
             this.SuspendLayout();
@@ -106,7 +107,7 @@
             // 
             this.par_checkAll.CheckOnClick = true;
             this.par_checkAll.Name = "par_checkAll";
-            this.par_checkAll.Size = new System.Drawing.Size(270, 26);
+            this.par_checkAll.Size = new System.Drawing.Size(333, 26);
             this.par_checkAll.Text = "Отметить все";
             this.par_checkAll.Click += new System.EventHandler(this.par_checkAll_Click);
             // 
@@ -114,40 +115,40 @@
             // 
             this.work_time.CheckOnClick = true;
             this.work_time.Name = "work_time";
-            this.work_time.Size = new System.Drawing.Size(270, 26);
-            this.work_time.Text = "Время работы";
+            this.work_time.Size = new System.Drawing.Size(333, 26);
+            this.work_time.Text = "Время работы, часы";
             this.work_time.CheckedChanged += new System.EventHandler(this.всеПоля_CheckedChanged);
             // 
             // power
             // 
             this.power.CheckOnClick = true;
             this.power.Name = "power";
-            this.power.Size = new System.Drawing.Size(270, 26);
-            this.power.Text = "Потребляемая мощность";
+            this.power.Size = new System.Drawing.Size(333, 26);
+            this.power.Text = "Потребляемая мощность, кВт";
             this.power.CheckedChanged += new System.EventHandler(this.всеПоля_CheckedChanged);
             // 
             // loading
             // 
             this.loading.CheckOnClick = true;
             this.loading.Name = "loading";
-            this.loading.Size = new System.Drawing.Size(270, 26);
-            this.loading.Text = "Уровень нагрузки";
+            this.loading.Size = new System.Drawing.Size(333, 26);
+            this.loading.Text = "Уровень нагрузки, %";
             this.loading.CheckedChanged += new System.EventHandler(this.всеПоля_CheckedChanged);
             // 
             // vibr
             // 
             this.vibr.CheckOnClick = true;
             this.vibr.Name = "vibr";
-            this.vibr.Size = new System.Drawing.Size(270, 26);
-            this.vibr.Text = "Уровень вибрации";
+            this.vibr.Size = new System.Drawing.Size(333, 26);
+            this.vibr.Text = "Уровень вибрации, жесткие диски";
             this.vibr.CheckedChanged += new System.EventHandler(this.всеПоля_CheckedChanged);
             // 
             // temp
             // 
             this.temp.CheckOnClick = true;
             this.temp.Name = "temp";
-            this.temp.Size = new System.Drawing.Size(270, 26);
-            this.temp.Text = "Температура";
+            this.temp.Size = new System.Drawing.Size(333, 26);
+            this.temp.Text = "Температура, C";
             this.temp.CheckedChanged += new System.EventHandler(this.всеПоля_CheckedChanged);
             // 
             // dPicker1
@@ -246,6 +247,11 @@
             this.label2.TabIndex = 13;
             this.label2.Text = "До:";
             // 
+            // updTimer
+            // 
+            this.updTimer.Interval = 60000;
+            this.updTimer.Tick += new System.EventHandler(this.Timer1_Tick);
+            // 
             // teleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -298,5 +304,6 @@
         private System.Windows.Forms.Panel infoBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Timer updTimer;
     }
 }
