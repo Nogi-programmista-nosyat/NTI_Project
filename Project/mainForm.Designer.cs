@@ -65,7 +65,7 @@
             this.buttonEnter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonEnter.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonEnter.ForeColor = System.Drawing.Color.White;
-            this.buttonEnter.Location = new System.Drawing.Point(122, 160);
+            this.buttonEnter.Location = new System.Drawing.Point(112, 204);
             this.buttonEnter.Name = "buttonEnter";
             this.buttonEnter.Size = new System.Drawing.Size(282, 65);
             this.buttonEnter.TabIndex = 1;
@@ -145,7 +145,7 @@
             this.mapButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.mapButton.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.mapButton.ForeColor = System.Drawing.Color.White;
-            this.mapButton.Location = new System.Drawing.Point(122, 246);
+            this.mapButton.Location = new System.Drawing.Point(112, 290);
             this.mapButton.Name = "mapButton";
             this.mapButton.Size = new System.Drawing.Size(282, 65);
             this.mapButton.TabIndex = 8;
@@ -173,7 +173,7 @@
             this.regButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.regButton.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.regButton.ForeColor = System.Drawing.Color.White;
-            this.regButton.Location = new System.Drawing.Point(122, 330);
+            this.regButton.Location = new System.Drawing.Point(112, 376);
             this.regButton.Name = "regButton";
             this.regButton.Size = new System.Drawing.Size(282, 65);
             this.regButton.TabIndex = 9;

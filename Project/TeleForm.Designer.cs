@@ -83,7 +83,6 @@
             this.typeCombo.Size = new System.Drawing.Size(170, 28);
             this.typeCombo.Text = "Вид отображения:";
             this.typeCombo.SelectedIndexChanged += new System.EventHandler(this.всеПоля_CheckedChanged);
-            this.typeCombo.Click += new System.EventHandler(this.typeCombo_Click);
             // 
             // id_dev
             // 

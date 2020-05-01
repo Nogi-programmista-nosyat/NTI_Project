@@ -278,6 +278,7 @@ namespace window3
         //Открытие формы отчета
         private void showButton_Click(object sender, EventArgs e)
         {
+            rept.Close();
             rept = new reptForm();
             rept.dataList = dataList;
             rept.par = par;
@@ -305,10 +306,5 @@ namespace window3
         }
 
         private void Timer1_Tick(object sender, EventArgs e){ update();}
-
-        private void typeCombo_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
