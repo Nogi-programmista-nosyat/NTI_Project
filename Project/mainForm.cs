@@ -37,7 +37,7 @@ namespace window3
 
         private void mainForm_Load(object sender, EventArgs e)
         {
-            
+            buttonMap.Visible = false;
         }
 
         //Разворачивание из трея при двойной нажатии на иконку
