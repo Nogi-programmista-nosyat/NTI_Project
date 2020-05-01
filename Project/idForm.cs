@@ -13,14 +13,13 @@ namespace window3
     public partial class idForm : Form
     {
         public user curuser;
-        
 
         public idForm()
         {
             InitializeComponent();
-            
         }
 
+        //Вывод данных о пользователе
         private void idForm_Load(object sender, EventArgs e)
         {
 

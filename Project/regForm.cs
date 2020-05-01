@@ -23,13 +23,14 @@ namespace window3
 
         }
 
+        //Закрытие формы регистрации
         public void regForm_FormClosed(object sender, EventArgs e)
         {
             this.Hide();
-            
-
         }
 
+        //При нажатии на кнопку происходит проверка введенных данных,
+        //а также отправка их на сервер
         private void regButton2_Click(object sender, EventArgs e)
         {
             try
@@ -45,32 +46,20 @@ namespace window3
                 curuser.sex = sexComboBox.SelectedIndex;
                 WebRequests client = new WebRequests();
                 client.registration(curuser);
-
             }
 
             catch (Exception exp)
             {
                 warnLabel.Text = "Проверьте введенные данные";
-
             }
 
             if ((nameText.Text == "") || (logText.Text == "") || (passText.Text == null) || (mailText.Text == null) || (postComboBox.Text == null) || (sexComboBox.Text == null) || (ageText.Text.ToString() == null)||(expText.Text == null))
                 warnLabel.Text = "Проверьте введенные данные";
             else
                 this.Hide();
- 
         }
 
-        private void NameText_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void AgeText_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        //Ограничение на ввод более 2 чисел
         private void ageText_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!(Char.IsDigit(e.KeyChar)) && (e.KeyChar != (char)Keys.Back) && (e.KeyChar != (char)Keys.Delete))
@@ -79,6 +68,7 @@ namespace window3
             }
         }
 
+        //Ограничение на ввод более 2 чисел
         private void expText_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!(Char.IsDigit(e.KeyChar)) && (e.KeyChar != (char)Keys.Back) && (e.KeyChar != (char)Keys.Delete))
@@ -87,6 +77,7 @@ namespace window3
             }
         }
 
+        //Ограничение на ввод чисел
         private void nameText_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!(Char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back) && (e.KeyChar != (char)Keys.Delete) && !(Char.IsWhiteSpace(e.KeyChar)))
@@ -95,6 +86,7 @@ namespace window3
             }
         }
 
+        //Ограничение на ввод пробела
         private void logText_KeyPress(object sender, KeyPressEventArgs e)
         {
             if ((Char.IsWhiteSpace(e.KeyChar)) && (e.KeyChar != (char)Keys.Back) && (e.KeyChar != (char)Keys.Delete))
@@ -103,6 +95,7 @@ namespace window3
             }
         }
 
+        //Автоматический выбор в комбобоксах
         private void RegForm_Load(object sender, EventArgs e)
         {
             postComboBox.SelectedIndex = 0;
