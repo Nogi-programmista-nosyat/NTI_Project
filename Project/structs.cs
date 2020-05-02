@@ -30,7 +30,7 @@ namespace window3
         public float vibr;
         public float power;
         public float loading;
-        public int work_time;
+        public float work_time;
         public System.DateTime dattim;
         public void getDate()
         {
